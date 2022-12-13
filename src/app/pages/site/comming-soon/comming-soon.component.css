@@ -1,0 +1,15 @@
+body {
+  height: 100vh;
+}
+
+@media (max-width: 999px) {
+  body {
+    height: 100vh;
+  }
+}
+
+.name {
+    color: var(--rypegreen);
+    font-size: xx-large;
+    font-weight: bold;
+}

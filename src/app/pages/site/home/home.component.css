@@ -1,0 +1,12 @@
+.team {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-direction: row;
+}
+
+.margen-item {
+    margin:10px
+}
