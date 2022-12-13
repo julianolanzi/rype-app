@@ -59,7 +59,7 @@ export class AuthComponent {
     }
   }
 
-  processarFalha(fail: any) {
+  processarFalha(fail: any) {   
     this.isLoading = false;
     this.errors = fail.error.errors;
   }

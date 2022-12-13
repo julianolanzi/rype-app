@@ -48,13 +48,13 @@ export class RecoveryPasswordComponent {
   }
 
   processarSucesso(response: any) {
-    this.isLoading = true
+    this.isLoading = true;
     this.errors = [];
     let token = response.crypt;
     this.router.navigate(['/reset-password/', token]);
   }
   processarFalha(fail: any) {
-    this.isLoading = true
+    this.isLoading = false;
     this.errors = fail.error.errors;
   }
 
