@@ -54,8 +54,8 @@ export class AuthComponent {
     if (response != this.errors) {
       setTimeout(() => {
       
-        this.router.navigate(['/comming-soon']);
-      }, 2000);
+        this.router.navigate(['/admin']);
+      }, 1000);
     }
   }
 

@@ -1,0 +1,9 @@
+body {
+    height: 100vh;
+  }
+  
+  @media (max-width: 999px) {
+    body {
+      height: 100vh;
+    }
+  }

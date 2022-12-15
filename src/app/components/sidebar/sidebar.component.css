@@ -1,0 +1,18 @@
+.app-sidebar.close {
+  width: 25px;
+}
+
+.text-logo {
+  color: var(--rypewhite);
+  margin-left: 10px;
+  font-size:x-large;
+
+}
+
+.text-logo.text-logo-close {
+  opacity: 0 !important; 
+}
+
+.item-opacity{
+  opacity: 0;
+}

@@ -1,3 +1,5 @@
+import { ContactComponent } from './../../pages/site/contact/contact.component';
+import { TermsComponent } from './../../pages/site/terms/terms.component';
 import { Routes } from '@angular/router';
 
 import { ResetPasswordComponent } from './../../pages/site/reset-password/reset-password.component';
@@ -13,4 +15,6 @@ export const SiteRoutes: Routes = [
   { path: 'recovery-password', component: RecoveryPasswordComponent },
   { path: 'reset-password/:token', component: ResetPasswordComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'terms', component: TermsComponent },
+  { path: 'contact', component: TermsComponent },
 ];

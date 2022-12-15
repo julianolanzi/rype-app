@@ -21,13 +21,14 @@
                                     <li *ngFor="let error of errors">{{ error }}</li>
                                 </ul>
                             </div>
-                            <p *ngIf="isRegisterSucess == true" class="alert alert-success">Cadastro realizado com sucesso 🤘🏼</p>
+                            <p *ngIf="isRegisterSucess == true" class="alert alert-success">Cadastro realizado com
+                                sucesso 🤘🏼</p>
                             <div class="text-center mb-11">
                                 <!--begin::Title-->
                                 <h1 class="text-dark fw-bolder mb-3">Registrar</h1>
                                 <!--end::Title-->
                                 <!--begin::Subtitle-->
-                                <div class="text-gray-500 fw-semibold fs-6">RYPE 🤘🏼 sua rede social gammer</div>
+                                <div class="text-gray-500 fw-semibold fs-6">RYPE 🤘🏼 sua rede social gamer</div>
                                 <!--end::Subtitle=-->
                             </div>
                             <!--begin::Heading-->
@@ -49,7 +50,8 @@
                             </div>
                             <div class="fv-row mb-8">
                                 <!--begin::Name-->
-                                <input type="text" id="name" formControlName="name" placeholder="Nome" class="form-control bg-transparent" />
+                                <input type="text" id="name" formControlName="name" placeholder="Nome"
+                                    class="form-control bg-transparent" />
                                 <div *ngIf="name.invalid && formDir.submitted">
                                     <p class="text-danger">Nome é obrigatório</p>
                                 </div>
@@ -59,41 +61,112 @@
                                 <!--begin::Lastname-->
                                 <input type="text" id="lastname" placeholder="Sobre Nome" formControlName="lastname"
                                     class="form-control bg-transparent" />
-                                    <div *ngIf="lastname.invalid && formDir.submitted">
-                                        <p class="text-danger">Sobre Nome é obrigatório</p>
-                                    </div>
+                                <div *ngIf="lastname.invalid && formDir.submitted">
+                                    <p class="text-danger">Sobre Nome é obrigatório</p>
+                                </div>
                                 <!--end::Lastname-->
                             </div>
                             <div class="fv-row mb-8">
                                 <!--begin::Lastname-->
                                 <p class="text-gray-500 fw-semibold fs-6">Data de nascimento</p>
-                                <input type="date" id="birthday" placeholder="Data de Nascimento" formControlName="birthday"
-                                    class="form-control bg-transparent" />
-                                    <div *ngIf="birthday.invalid && formDir.submitted">
-                                        <p class="text-danger">Data de Nascimento é obrigatório</p>
-                                    </div>
+                                <input type="date" id="birthday" placeholder="Data de Nascimento"
+                                    formControlName="birthday" class="form-control bg-transparent" />
+                                <div *ngIf="birthday.invalid && formDir.submitted">
+                                    <p class="text-danger">Data de Nascimento é obrigatório</p>
+                                </div>
                                 <!--end::Lastname-->
                             </div>
+                            <!--begin::Input group-->
+                            <div class="d-flex flex-column mb-5 fv-row">
+                                <!--begin::Label-->
+                                <label class="d-flex align-items-center fs-5 fw-semibold mb-2">
+                                    <span class="required">País</span>
+                                    <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip"
+                                        title="Your payment statements may very based on selected country"></i>
+                                </label>
+                                <div *ngIf="country.invalid && formDir.submitted">
+                                    <p class="text-danger">País é obrigatório</p>
+                                </div>
+                                <!--end::Label-->
+                                <!--begin::Selectcountry -->
+                                <select name="country" data-control="select2" id="country" formControlName="country" data-placeholder="Selecione seu País "
+                                    class="form-select form-select-solid">
+                                    <option value="">Selecione seu País ...</option>
+                                    <option value="brasil">Brasil</option>
+                                    <option value="méxico">México</option>
+                                    <option value="chile">Chile</option>
+                                    <option value="argentina">Argentina</option>
+                                </select>
+                                <!--end::Select country-->
+                            </div>
+                            <!--end::Input group-->
+
+                            <!--begin::Input group-->
+                            <div class="mb-10">
+                                <!--begin::Label-->
+                                <label class="required fw-semibold fs-6 mb-5">Gênero</label>
+                                <!--end::Label-->
+                                <div *ngIf="gender.invalid && formDir.submitted">
+                                    <p class="text-danger">Gênero é obrigatório</p>
+                                </div>
+                                <!--begin::Input row-->
+                                <div class="d-flex">
+                                    <!--begin::Radio-->
+                                    <div class="form-check form-check-custom form-check-solid mb-5" >
+                                        <!--begin::Input-->
+                                        <input class="form-check-input me-3" id="male"   type="radio" value="Male" formControlName="gender"
+                                            />
+                                        <!--end::Input-->
+
+                                        <!--begin::Label-->
+                                        <label class="form-check-label" for="kt_docs_formvalidation_radio_option_1">
+                                            <div class="fw-semibold text-gray-800">Homem</div>
+                                        </label>
+                                        <!--end::Label-->
+                                    </div>
+                                    <!--end::Radio-->
+
+                                    <!--begin::Radio-->
+                                    <div class="form-check form-check-custom form-check-solid mb-5 ms-4">
+                                        <!--begin::Input-->
+                                        <input class="form-check-input me-3" id="famale"  type="radio" value="Female" formControlName="gender"
+                                            id="kt_docs_formvalidation_radio_option_2" />
+                                        <!--end::Input-->
+
+                                        <!--begin::Label-->
+                                        <label class="form-check-label"  for="kt_docs_formvalidation_radio_option_2">
+                                            <div class="fw-semibold text-gray-800">Mulher</div>
+                                        </label>
+                                        <!--end::Label-->
+                                    </div>
+                                    <!--end::Radio-->
+
+                                 
+                                </div>
+                                <!--end::Input row-->
+                            </div>
+                            <!--end::Input group-->
                             <div class="fv-row mb-8">
                                 <!--begin::Phone-->
-                                <input type="tel" id="phone" placeholder="Celular" formControlName="phone" mask='(00) 0000-0000'
-                                    class="form-control bg-transparent" />
+                                <input type="tel" id="phone" placeholder="Celular" formControlName="phone"
+                                    mask='(00) 0000-0000' class="form-control bg-transparent" />
 
                                 <div *ngIf="phone.invalid && formDir.submitted">
                                     <p class="text-danger">Celular é obrigatório</p>
 
                                 </div>
-                                <div class="text-danger" *ngIf="phone.errors?.pattern">O numero precisa ter pelo menos 11 numeros</div>
+                                <div class="text-danger" *ngIf="phone.errors?.pattern">O numero precisa ter pelo menos
+                                    11 numeros</div>
                                 <!--end::Phone-->
                             </div>
                             <div class="fv-row mb-8">
                                 <!--begin::Email-->
-                                <input type="text" id="email" placeholder="Email" name="email" autocomplete="off" formControlName="email"
-                                    class="form-control bg-transparent" />
-                                    <div *ngIf="email.invalid && formDir.submitted">
-                                        <p class="text-danger">Email é obrigatório</p>
-    
-                                    </div>
+                                <input type="text" id="email" placeholder="Email" name="email" autocomplete="off"
+                                    formControlName="email" class="form-control bg-transparent" />
+                                <div *ngIf="email.invalid && formDir.submitted">
+                                    <p class="text-danger">Email é obrigatório</p>
+
+                                </div>
                                 <!--end::Email-->
                             </div>
                             <!--begin::Input group-->
@@ -102,12 +175,12 @@
                                 <div class="mb-1">
                                     <!--begin::Input wrapper-->
                                     <div class="position-relative mb-3">
-                                        <input class="form-control bg-transparent" id="password" type="password" formControlName="password"
-                                            placeholder="Senha" name="password" />
-                                            <div *ngIf="password.invalid && formDir.submitted">
-                                                <p class="text-danger" >Senha é obrigatório</p>
-            
-                                            </div>
+                                        <input class="form-control bg-transparent" id="password" type="password"
+                                            formControlName="password" placeholder="Senha" name="password" />
+                                        <div *ngIf="password.invalid && formDir.submitted">
+                                            <p class="text-danger">Senha é obrigatório</p>
+
+                                        </div>
                                     </div>
                                     <!--end::Input wrapper-->
 
@@ -122,20 +195,22 @@
                             <!--begin::Accept-->
                             <div class="fv-row mb-8">
                                 <label class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="terms" formControlName="terms" value="true" />
+                                    <input class="form-check-input" type="checkbox" id="terms" formControlName="terms"
+                                        value="true" />
                                     <span class="form-check-label fw-semibold text-gray-700 fs-base ms-1">Aceitar termos
                                         da plataforma
-                                        <a href="#" class="ms-1 link-primary">Termos</a></span>
+                                        <a routerLink="/terms" class="ms-1 link-primary">Termos</a></span>
                                 </label>
                                 <div *ngIf="terms.invalid && formDir.submitted">
-                                    <p>Aceitar os termos é obrigatório</p>
+                                    <p class="text-danger"  >Aceitar os termos é obrigatório</p>
 
                                 </div>
                             </div>
                             <!--end::Accept-->
                             <!--begin::Submit button-->
                             <div class="d-grid mb-10">
-                                <button type="submit" value="Registrar" id="kt_sign_up_submit" [disabled]="!cadastroForm.valid"  class="btn btn-primary">
+                                <button type="submit" value="Registrar" id="kt_sign_up_submit" [disabled]="!cadastroForm.valid"
+                                    class="btn btn-primary">
                                     <!--begin::Indicator label-->
                                     <span class="indicator-label">Registrar</span>
                                     <!--end::Indicator label-->
@@ -157,8 +232,8 @@
                 <div class="d-flex flex-center flex-wrap px-5">
                     <!--begin::Links-->
                     <div class="d-flex fw-semibold text-primary fs-base">
-                        <a href="#" class="px-5 link-primary" >Terms</a>
-                        <a href="#" class="px-5 link-primary" >Contact Us</a>
+                        <a routerLink="/terms" class="px-5 link-primary">Termos</a>
+                        <a routerLink="/contact" class="px-5 link-primary">Contato</a>
                     </div>
                     <!--end::Links-->
                 </div>

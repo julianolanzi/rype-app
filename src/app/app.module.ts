@@ -9,9 +9,11 @@ import { SiteModule } from './layouts/site/site.module';
 import { ComponetsModule } from './components/componets.module';
 
 import { AppComponent } from './app.component';
+import { CarregaJS } from './services/carrega.js.service';
+
 
 @NgModule({
-  declarations: [AppComponent, NotFoundComponent ],
+  declarations: [AppComponent, NotFoundComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -20,7 +22,7 @@ import { AppComponent } from './app.component';
     AdminLayoutModule,
     ComponetsModule,
   ],
-  providers: [],
+  providers: [CarregaJS, HTMLElement],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

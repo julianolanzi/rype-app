@@ -15,6 +15,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterService } from 'src/app/services/register.service';
 import { HttpClientModule } from '@angular/common/http';
 import { EventService } from 'src/app/services/event.service';
+import { TermsComponent } from 'src/app/pages/site/terms/terms.component';
+import { ContactComponent } from 'src/app/pages/site/contact/contact.component';
 
 
 
@@ -26,7 +28,9 @@ import { EventService } from 'src/app/services/event.service';
         RecoveryPasswordComponent,
         ResetPasswordComponent,
         HomeComponent,
-        LoadingComponent
+        LoadingComponent,
+        TermsComponent, 
+        ContactComponent
     ],
     providers: [
         RegisterService,

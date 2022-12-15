@@ -6,4 +6,7 @@ export interface User {
     phone: string;
     password: string;
     privacyTerm: boolean;
+    url: string;
+    gender: string;
+    country: string;
 }
