@@ -10,7 +10,7 @@ export abstract class BaseService {
 
   public LocalStorage = new LocalStorageUtils();
 
-  protected UrlServiceV1: string = environment.UrlService;
+  protected UrlServiceV1: string = 'https://app-rype-api.herokuapp.com';
 
   protected ObterHeaderJson() {
     return {
