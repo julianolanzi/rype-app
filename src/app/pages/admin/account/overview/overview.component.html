@@ -1,0 +1,157 @@
+<div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6">
+
+</div>
+<!--begin::Content container-->
+<div id="kt_app_content" class="app-content flex-column-fluid">
+  <!--begin::Content container-->
+  <div id="kt_app_content_container" class="app-container container-xxl">
+
+
+    <app-basic-info></app-basic-info>
+
+
+    <!--begin::details View-->
+    <div *ngIf="user" class="card mb-5 mb-xl-10">
+      <!--begin::Card header-->
+      <div class="card-header cursor-pointer">
+        <!--begin::Card title-->
+        <div class="card-title m-0">
+          <h3 class="fw-bold m-0">Detalhes</h3>
+        </div>
+        <!--end::Card title-->
+        <!--begin::Action-->
+        <a routerLink="/settings" class="btn btn-sm btn-primary align-self-center">Edit Profile</a>
+        <!--end::Action-->
+      </div>
+      <!--begin::Card header-->
+      <!--begin::Card body-->
+      <div class="card-body p-9">
+        <!--begin::Row-->
+        <div class="row mb-7">
+          <!--begin::Label-->
+          <label class="col-lg-4 fw-semibold text-muted">Nickname</label>
+          <!--end::Label-->
+          <!--begin::Col-->
+          <div class="col-lg-8">
+            <span class="fw-bold fs-6 text-gray-800">{{this.user.nickname}}</span>
+          </div>
+          <!--end::Col-->
+        </div>
+        <!--end::Row-->
+        <!--begin::Row-->
+        <div class="row mb-7">
+          <!--begin::Label-->
+          <label class="col-lg-4 fw-semibold text-muted">Nome</label>
+          <!--end::Label-->
+          <!--begin::Col-->
+          <div class="col-lg-8">
+            <span class="fw-bold fs-6 text-gray-800">{{this.user.name}}</span>
+          </div>
+          <!--end::Col-->
+        </div>
+        <!--end::Row-->
+        <!--end::Row-->
+        <!--begin::Row-->
+        <div class="row mb-7">
+          <!--begin::Label-->
+          <label class="col-lg-4 fw-semibold text-muted">Sobre nome</label>
+          <!--end::Label-->
+          <!--begin::Col-->
+          <div class="col-lg-8">
+            <span class="fw-bold fs-6 text-gray-800">{{this.user.lastname}}</span>
+          </div>
+          <!--end::Col-->
+        </div>
+        <!--end::Row-->
+        <!--begin::Row-->
+        <div class="row mb-7">
+          <!--begin::Label-->
+          <label class="col-lg-4 fw-semibold text-muted">Gênero</label>
+          <!--end::Label-->
+          <!--begin::Col-->
+          <div class="col-lg-8">
+            <span *ngIf="this.user.gender == 'Male'" class="fw-bold fs-6 text-gray-800">Masculino</span>
+            <span *ngIf="this.user.gender == 'Female'" class="fw-bold fs-6 text-gray-800">Feminino</span>
+          </div>
+          <!--end::Col-->
+        </div>
+        <!--end::Row-->
+        <!--begin::Row-->
+        <div class="row mb-7">
+          <!--begin::Label-->
+          <label class="col-lg-4 fw-semibold text-muted">Data de nascimento</label>
+          <!--end::Label-->
+          <!--begin::Col-->
+          <div class="col-lg-8">
+            <span class="fw-bold fs-6 text-gray-800">{{this.user.birthday | date:'dd/MM/yyyy' }}</span>
+          </div>
+          <!--end::Col-->
+        </div>
+        <!--end::Row-->
+        <!--end::Row-->
+        <!--begin::Row-->
+        <div class="row mb-7">
+          <!--begin::Label-->
+          <label class="col-lg-4 fw-semibold text-muted">Telefone</label>
+          <!--end::Label-->
+          <!--begin::Col-->
+          <div class="col-lg-8">
+            <span class="fw-bold fs-6 text-gray-800">{{this.user.phone | mask: '(00) 00000-0000' }}</span>
+          </div>
+          <!--end::Col-->
+        </div>
+        <!--end::Row-->
+
+        <!--begin::Row-->
+        <div class="row mb-7">
+          <!--begin::Label-->
+          <label class="col-lg-4 fw-semibold text-muted">Email</label>
+          <!--end::Label-->
+          <!--begin::Col-->
+          <div class="col-lg-8">
+            <span class="fw-bold fs-6 text-gray-800">{{this.user.email }}</span>
+          </div>
+          <!--end::Col-->
+        </div>
+        <!--end::Row-->
+
+
+
+        <!--begin::Input group-->
+        <div class="row mb-7">
+          <!--begin::Label-->
+          <label class="col-lg-4 fw-semibold text-muted">País
+           </label>
+          <!--end::Label-->
+          <!--begin::Col-->
+          <div class="col-lg-8">
+            <span class="fw-bold fs-6 text-gray-800">{{this.user.country.toLocaleUpperCase()}}</span>
+          </div>
+          <!--end::Col-->
+        </div>
+        <!--end::Input group-->
+          <!--begin::Row-->
+          <div class="row mb-7">
+            <!--begin::Label-->
+            <label class="col-lg-4 fw-semibold text-muted">Registro</label>
+            <!--end::Label-->
+            <!--begin::Col-->
+            <div class="col-lg-8">
+              <span class="fw-bold fs-6 text-gray-800">{{this.user.createdAt | date:'dd/MM/yyyy' }}</span>
+            </div>
+            <!--end::Col-->
+          </div>
+          <!--end::Row-->
+
+
+      </div>
+      <!--end::Card body-->
+    </div>
+    <!--end::details View-->
+
+  </div>
+  <!--end::Content container-->
+
+
+</div>
+<!--end::Content-->

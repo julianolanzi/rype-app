@@ -66,7 +66,8 @@
               "browserTarget": "rype-app:build:production"
             },
             "development": {
-              "browserTarget": "rype-app:build:development"
+              "browserTarget": "rype-app:build:development",
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"

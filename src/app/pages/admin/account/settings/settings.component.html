@@ -1,0 +1,333 @@
+<div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6">
+
+</div>
+<!--begin::Content container-->
+<div id="kt_app_content" class="app-content flex-column-fluid">
+  <!--begin::Content container-->
+  <div id="kt_app_content_container" class="app-container container-xxl">
+
+    <app-basic-info></app-basic-info>
+    <p *ngIf="isChangeSucess == true" class="alert alert-success">Atualização realizada com sucesso 🤘🏼</p>
+
+    <div class="alert alert-danger" *ngIf="errors.length > 0">
+      <h3 id="msgRetorno">Opa! Alguma coisa não deu certo:</h3>
+      <ul>
+        <li *ngFor="let error of errors">{{ error }}</li>
+      </ul>
+    </div>
+    <!--begin::Basic info-->
+    <div class="card mb-5 mb-xl-10">
+
+      <!--begin::Card header-->
+      <div class="card-header border-0 cursor-pointer" role="button" data-bs-toggle="collapse"
+        data-bs-target="#kt_account_profile_details" aria-expanded="true" aria-controls="kt_account_profile_details">
+        <!--begin::Card title-->
+        <div class="card-title m-0">
+          <h3 class="fw-bold m-0">Detalhes da conta</h3>
+        </div>
+        <!--end::Card title-->
+      </div>
+      <!--begin::Card header-->
+      <!--begin::Content-->
+      <div id="kt_account_settings_profile_details" class="collapse show">
+        <!--begin::Form-->
+        <form (ngSubmit)="updateProfile()" [formGroup]="updateForm" #formDir="ngForm" class="form">
+          <!--begin::Card body-->
+          <div class="card-body border-top p-9">
+            <!--begin::Input group-->
+            <div class="row mb-6">
+              <!--begin::Label-->
+              <label class="col-lg-4 col-form-label fw-semibold fs-6">Avatar</label>
+              <!--end::Label-->
+              <!--begin::Col-->
+              <div class="col-lg-8">
+                <!--begin::Image input-->
+                <div class="image-input image-input-outline"
+                  style="background-image: url('assets/media/svg/avatars/blank.svg')">
+                  <!--begin::Preview existing avatar-->
+                  <div class=" w-125px h-125px ">
+                    <img class="image-input-wrapper w-125px h-125px" src="{{this.userProfile?.url}}" alt="image" />
+                  </div>
+                  <!--end::Preview existing avatar-->
+                </div>
+                <!--end::Image input-->
+
+              </div>
+              <!--end::Col-->
+            </div>
+            <!--end::Input group-->
+            <!--begin::Input group-->
+            <div class="row mb-6">
+              <!--begin::Label-->
+              <label class="col-lg-4 col-form-label required fw-semibold fs-6">Nickname</label>
+              <!--end::Label-->
+              <!--begin::Col-->
+              <div class="col-lg-8 fv-row">
+                <input type="text" formControlName="nickname" name="nickname" id="nickname"
+                  class="form-control form-control-lg form-control-solid" placeholder="Nickname" />
+                <div *ngIf="nickname.invalid && formDir.submitted">
+                  <p class="text-danger">Nickname é obrigatório</p>
+                </div>
+              </div>
+              <!--end::Col-->
+            </div>
+            <!--end::Input group-->
+            <!--begin::Input group-->
+            <div class="row mb-6">
+              <!--begin::Label-->
+              <label class="col-lg-4 col-form-label required fw-semibold fs-6">Nome completo</label>
+              <!--end::Label-->
+              <!--begin::Col-->
+              <div class="col-lg-8">
+                <!--begin::Row-->
+                <div class="row">
+                  <!--begin::Col-->
+                  <div class="col-lg-6 fv-row">
+                    <input type="text" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" id="name"
+                      formControlName="name" placeholder="Nome" />
+                    <div *ngIf="name.invalid && formDir.submitted">
+                      <p class="text-danger">Nome é obrigatório</p>
+                    </div>
+                  </div>
+                  <!--end::Col-->
+                  <!--begin::Col-->
+                  <div class="col-lg-6 fv-row">
+                    <input type="text" name="lastname" class="form-control form-control-lg form-control-solid"
+                      formControlName="lastname" placeholder="Sobre nome" />
+                    <div *ngIf="lastname.invalid && formDir.submitted">
+                      <p class="text-danger">Sobre nome é obrigatório</p>
+                    </div>
+                  </div>
+                  <!--end::Col-->
+                </div>
+                <!--end::Row-->
+              </div>
+              <!--end::Col-->
+            </div>
+            <!--end::Input group-->
+
+            <!--begin::Input group-->
+            <div class="row mb-6">
+              <!--begin::Label-->
+              <label class="col-lg-4 col-form-label required fw-semibold fs-6">Gênero</label>
+              <div *ngIf="gender.invalid && formDir.submitted">
+                <p class="text-danger">Gênero é obrigatório</p>
+              </div>
+              <!--end::Label-->
+              <!--begin::Col-->
+              <div class="col-lg-8">
+                <!--begin::Row-->
+                <div class="row ">
+                  <!--begin::Col-->
+                  <div class="col-lg-6 fv-row">
+                    <div class="form-check form-check-custom form-check-solid ">
+                      <!--begin::Input-->
+                      <input class="form-check-input me-3" formControlName="gender" id="male" type="radio" value="Male"
+                        formControlName="gender" />
+                      <!--end::Input-->
+
+                      <!--begin::Label-->
+                      <label class="form-check-label" for="kt_docs_formvalidation_radio_option_1">
+                        <div class="fw-semibold text-gray-800">Homem</div>
+                      </label>
+                      <!--end::Label-->
+                    </div>
+                    <!--end::Radio-->
+                  </div>
+                  <!--end::Col-->
+                  <!--begin::Col-->
+                  <div class="col-lg-6 fv-row">
+                    <!--begin::Radio-->
+                    <div class="form-check form-check-custom form-check-solid ">
+                      <!--begin::Input-->
+                      <input class="form-check-input me-3" formControlName="gender" id="famale" type="radio"
+                        value="Female" formControlName="gender" />
+                      <!--end::Input-->
+
+                      <!--begin::Label-->
+                      <label class="form-check-label">
+                        <div class="fw-semibold text-gray-800">Mulher</div>
+                      </label>
+                      <!--end::Label-->
+                    </div>
+                    <!--end::Radio-->
+                  </div>
+                  <!--end::Col-->
+                </div>
+                <!--end::Row-->
+              </div>
+              <!--end::Col-->
+            </div>
+            <!--end::Input group-->
+            <!--begin::Input group-->
+            <div class="row mb-6">
+              <!--begin::Label-->
+              <label class="col-lg-4 col-form-label required fw-semibold fs-6">Data de nascimento</label>
+              <!--end::Label-->
+              <!--begin::Col-->
+              <div class="col-lg-8 fv-row">
+                <input type="date" id="birthday" name="birthday" placeholder="Data de Nascimento"
+                  formControlName="birthday" class="form-control bg-transparent" />
+                <div *ngIf="birthday.invalid && formDir.submitted">
+                  <p class="text-danger">Data de Nascimento é obrigatório</p>
+                </div>
+              </div>
+              <!--end::Col-->
+            </div>
+            <!--end::Input group-->
+            <!--begin::Input group-->
+            <div class="row mb-6">
+              <!--begin::Label-->
+              <label class="col-lg-4 col-form-label fw-semibold fs-6">
+                <span class="required">Telefone</span>
+
+              </label>
+              <!--end::Label-->
+              <!--begin::Col-->
+              <div class="col-lg-8 fv-row">
+                <input type="tel" name="phone" id="phone" mask='(00) 00000-0000' formControlName="phone"
+                  class="form-control form-control-lg form-control-solid" placeholder="Celular" />
+                <div *ngIf="phone.invalid && formDir.submitted">
+                  <p class="text-danger">Celular é obrigatório</p>
+
+                </div>
+              </div>
+              <!--end::Col-->
+            </div>
+            <!--end::Input group-->
+            <!--begin::Input group-->
+            <div class="row mb-6">
+              <!--begin::Label-->
+              <label class="col-lg-4 col-form-label fw-semibold fs-6">Email</label>
+              <!--end::Label-->
+              <!--begin::Col-->
+              <div class="col-lg-8 fv-row">
+                <input type="text" name="email" id="email" class="form-control form-control-lg form-control-solid"
+                  placeholder="Email" formControlName="email" />
+                <div *ngIf="email.invalid && formDir.submitted">
+                  <p class="text-danger">Email é obrigatório</p>
+
+                </div>
+              </div>
+              <!--end::Col-->
+            </div>
+            <!--end::Input group-->
+            <!--begin::Input group-->
+            <div class="row mb-6">
+              <!--begin::Label-->
+              <label class="col-lg-4 col-form-label fw-semibold fs-6">
+                <span class="required">País</span>
+                <div *ngIf="country.invalid && formDir.submitted">
+                  <p class="text-danger">País é obrigatório</p>
+                </div>
+              </label>
+              <!--end::Label-->
+              <!--begin::Col-->
+              <div class="col-lg-8 fv-row">
+                <select name="country" formControlName="country" id="country"
+                  class="form-select form-select-solid form-select-lg fw-semibold">
+                  <option value="">Selecione seu País ...</option>
+                  <option value="brasil">Brasil</option>
+                  <option value="méxico">México</option>
+                  <option value="chile">Chile</option>
+                  <option value="argentina">Argentina</option>
+
+                </select>
+              </div>
+              <!--end::Col-->
+            </div>
+            <!--end::Input group-->
+
+
+
+          </div>
+          <!--end::Card body-->
+          <!--begin::Actions-->
+          <div class="card-footer d-flex justify-content-end py-6 px-9">
+            <!-- <button type="reset" class="btn btn-light btn-active-light-primary me-2">Cancelar</button> -->
+            <button type="submit" [disabled]="!updateForm.valid || (this.updateForm.touched == false)"
+              class="btn btn-primary">Atualizar dados</button>
+          </div>
+          <!--end::Actions-->
+        </form>
+        <!--end::Form-->
+      </div>
+      <!--end::Content-->
+    </div>
+    <!--end::Basic info-->
+
+
+
+    <!--begin::Deactivate Account-->
+    <div class="card">
+      <!--begin::Card header-->
+      <div class="card-header border-0">
+        <div class="card-title m-0">
+          <h3 class="fw-bold m-0">Apagar minha conta</h3>
+        </div>
+      </div>
+      <!--end::Card header-->
+      <!--begin::Content-->
+      <div id="kt_account_settings_deactivate" class="collapse show">
+        <!--begin::Form-->
+        <form (ngSubmit)="delete()" [formGroup]="deletAcount" #formDir="ngForm" class="form">
+          <!--begin::Card body-->
+          <div class="card-body border-top p-9">
+            <!--begin::Notice-->
+            <div class="notice d-flex bg-light-warning rounded border-warning border border-dashed mb-9 p-6">
+              <!--begin::Icon-->
+              <!--begin::Svg Icon | path: icons/duotune/general/gen044.svg-->
+              <span class="svg-icon svg-icon-2tx svg-icon-warning me-4">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor" />
+                  <rect x="11" y="14" width="7" height="2" rx="1" transform="rotate(-90 11 14)" fill="currentColor" />
+                  <rect x="11" y="17" width="2" height="2" rx="1" transform="rotate(-90 11 17)" fill="currentColor" />
+                </svg>
+              </span>
+              <!--end::Svg Icon-->
+              <!--end::Icon-->
+              <!--begin::Wrapper-->
+              <div class="d-flex flex-stack flex-grow-1">
+                <!--begin::Content-->
+                <div class="fw-semibold">
+                  <h4 class="text-gray-900 fw-bold">Atenção essa ação não pode ser restaurada</h4>
+                  <div class="fs-6 text-gray-700">Para realizar o delete da conta, confirme sua vontade e clique em
+                    deletar, seus dados serão deletados em todos nosso meios de comunicação rype.
+                  </div>
+                </div>
+                <!--end::Content-->
+              </div>
+              <!--end::Wrapper-->
+            </div>
+            <!--end::Notice-->
+            <!--begin::Form input row-->
+            <div class="form-check form-check-solid fv-row">
+              <input id="confirmation" formControlName="confirmation" value="true" name="deactivate"
+                class="form-check-input" type="checkbox" />
+              <label class="form-check-label fw-semibold ps-2 fs-6" for="deactivate">Confirmo que desejo deletar minha
+                conta</label>
+            </div>
+            <!--end::Form input row-->
+          </div>
+          <!--end::Card body-->
+          <!--begin::Card footer-->
+          <div class="card-footer d-flex justify-content-end py-6 px-9">
+            <button type="submit" [disabled]="!deletAcount.valid " class="btn btn-danger fw-semibold">Deletar minha
+              conta</button>
+          </div>
+          <!--end::Card footer-->
+        </form>
+        <!--end::Form-->
+      </div>
+      <!--end::Content-->
+    </div>
+    <!--end::Deactivate Account-->
+  </div>
+  <!--end::Content container-->
+
+
+</div>
+<!--end::Content-->
+<div *ngIf="isLoading == true">
+  <app-loading></app-loading>
+</div>

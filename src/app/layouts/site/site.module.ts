@@ -14,34 +14,39 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterService } from 'src/app/services/register.service';
 import { HttpClientModule } from '@angular/common/http';
-import { EventService } from 'src/app/services/event.service';
 import { TermsComponent } from 'src/app/pages/site/terms/terms.component';
 import { ContactComponent } from 'src/app/pages/site/contact/contact.component';
+import { LoadingModule } from 'src/app/pages/site/loading/loading.module';
+import {
+    NgxMaskDirective,
+    NgxMaskPipe,
+    provideNgxMask,
+    IConfig,
+  } from 'ngx-mask';
 
-
+export const options: Partial<null | IConfig> | (() => Partial<IConfig>) = null;
 
 @NgModule({
-    declarations: [
-        SiteComponent,
-        AuthComponent,
-        RegisterComponent,
-        RecoveryPasswordComponent,
-        ResetPasswordComponent,
-        HomeComponent,
-        LoadingComponent,
-        TermsComponent, 
-        ContactComponent
-    ],
-    providers: [
-        RegisterService,
-        EventService,
-    ],
-    imports: [
-        CommonModule,
-        RouterModule.forChild(SiteRoutes),
-        FormsModule,
-        ReactiveFormsModule,
-        HttpClientModule,
-    ]
+  declarations: [
+    SiteComponent,
+    AuthComponent,
+    RegisterComponent,
+    RecoveryPasswordComponent,
+    ResetPasswordComponent,
+    HomeComponent,
+    TermsComponent,
+    ContactComponent,
+  ],
+  providers: [RegisterService, provideNgxMask()],
+  imports: [
+    CommonModule,
+    RouterModule.forChild(SiteRoutes),
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    LoadingModule,
+    NgxMaskDirective,
+    NgxMaskPipe,
+  ],
 })
-export class SiteModule { }
+export class SiteModule {}

@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment';
 import { LocalStorageUtils } from './../utils/localstorage';
 import { HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { throwError } from 'rxjs';
@@ -5,13 +6,11 @@ import { EventService } from './event.service';
 
 export abstract class BaseService {
 
-  public eventService = new EventService();
-
   constructor() {}
 
   public LocalStorage = new LocalStorageUtils();
 
-  protected UrlServiceV1: string = 'https://app-rype-api.herokuapp.com/';
+  protected UrlServiceV1: string = environment.UrlService;
 
   protected ObterHeaderJson() {
     return {
@@ -37,7 +36,6 @@ export abstract class BaseService {
   protected serviceError(response: Response | any) {
     let customError: string[] = [];
     let customResponse = { error: { errors: [] } };
-
     if (response instanceof HttpErrorResponse) {
       if (response.statusText === 'Unknown Error') {
         customError.push('Ocorreu um errro desconhecido');
@@ -45,22 +43,20 @@ export abstract class BaseService {
       }
     }
 
-    if (response.status === 500) {
+    if (response.status === 0 || response.status == 500) {
       customError.push(
         'Ocorreu um erro no processamento, tente novamente mais tarde ou contate o nosso suporte.'
       );
-
       // Erros do tipo 500 não possuem uma lista de erros
       // A lista de erros do HttpErrorResponse é readonly
-
-      return throwError(customResponse);
+      response.error.errors = customError;
+      return throwError(response);
     }
 
     if (response instanceof HttpErrorResponse) {
       customError.push(response.error.error);
       response.error.errors = customError;
     }
-   
 
     return throwError(response);
   }

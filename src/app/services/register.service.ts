@@ -17,7 +17,7 @@ export class RegisterService extends BaseService {
 
   registrarUsuario(usuario: User): Observable<User> {
     let response = this.http
-      .post(this.UrlServiceV1 + 'users/', usuario, this.ObterHeaderJson())
+      .post(this.UrlServiceV1 + '/users/', usuario, this.ObterHeaderJson())
       .pipe(map(this.extractData), catchError(this.serviceError));
     return response;
   }
@@ -25,7 +25,7 @@ export class RegisterService extends BaseService {
   recoveryPassword(email: recoveryPassword): Observable<any> {
     let response = this.http
       .post(
-        this.UrlServiceV1 + 'auth/forgot_password',
+        this.UrlServiceV1 + '/auth/forgot_password',
         email,
         this.ObterHeaderJson()
       )
@@ -37,7 +37,7 @@ export class RegisterService extends BaseService {
   
     let response = this.http
       .post(
-        this.UrlServiceV1 + 'auth/reset_password/' + token,
+        this.UrlServiceV1 + '/auth/reset_password/' + token,
         user,
         this.ObterHeaderJson()
       )
@@ -48,7 +48,7 @@ export class RegisterService extends BaseService {
   loginUser(loginUser: UserLogin): Observable<UserLogin> {
     let response = this.http
       .post(
-        this.UrlServiceV1 + 'auth/',
+        this.UrlServiceV1 + '/auth/',
         loginUser,
         this.ObterHeaderJson()
       )

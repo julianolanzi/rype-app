@@ -11,9 +11,7 @@
                     <div class="w-lg-500px p-10">
                         <!--begin::Form-->
                         <form class="form w-100" novalidate="novalidate" (ngSubmit)="addAcount()"
-                            [formGroup]="cadastroForm" #formDir="ngForm" id="kt_sign_up_form"
-                            data-kt-redirect-url="../../demo1/dist/authentication/layouts/corporate/sign-in.html"
-                            action="#">
+                            [formGroup]="cadastroForm" #formDir="ngForm">
                             <!--begin::Heading-->
                             <div class="alert alert-danger" *ngIf="errors.length > 0">
                                 <h3 id="msgRetorno">Opa! Alguma coisa não deu certo:</h3>
@@ -89,8 +87,8 @@
                                 </div>
                                 <!--end::Label-->
                                 <!--begin::Selectcountry -->
-                                <select name="country" data-control="select2" id="country" formControlName="country" data-placeholder="Selecione seu País "
-                                    class="form-select form-select-solid">
+                                <select name="country"  id="country" formControlName="country"
+                                    data-placeholder="Selecione seu País " class="form-select form-select-solid">
                                     <option value="">Selecione seu País ...</option>
                                     <option value="brasil">Brasil</option>
                                     <option value="méxico">México</option>
@@ -112,10 +110,10 @@
                                 <!--begin::Input row-->
                                 <div class="d-flex">
                                     <!--begin::Radio-->
-                                    <div class="form-check form-check-custom form-check-solid mb-5" >
+                                    <div class="form-check form-check-custom form-check-solid mb-5">
                                         <!--begin::Input-->
-                                        <input class="form-check-input me-3" id="male"   type="radio" value="Male" formControlName="gender"
-                                            />
+                                        <input class="form-check-input me-3" id="male" type="radio" value="Male"
+                                            formControlName="gender" />
                                         <!--end::Input-->
 
                                         <!--begin::Label-->
@@ -129,27 +127,27 @@
                                     <!--begin::Radio-->
                                     <div class="form-check form-check-custom form-check-solid mb-5 ms-4">
                                         <!--begin::Input-->
-                                        <input class="form-check-input me-3" id="famale"  type="radio" value="Female" formControlName="gender"
-                                            id="kt_docs_formvalidation_radio_option_2" />
+                                        <input class="form-check-input me-3" id="famale" type="radio" value="Female"
+                                            formControlName="gender" id="kt_docs_formvalidation_radio_option_2" />
                                         <!--end::Input-->
 
                                         <!--begin::Label-->
-                                        <label class="form-check-label"  for="kt_docs_formvalidation_radio_option_2">
+                                        <label class="form-check-label" for="kt_docs_formvalidation_radio_option_2">
                                             <div class="fw-semibold text-gray-800">Mulher</div>
                                         </label>
                                         <!--end::Label-->
                                     </div>
                                     <!--end::Radio-->
 
-                                 
+
                                 </div>
                                 <!--end::Input row-->
                             </div>
                             <!--end::Input group-->
                             <div class="fv-row mb-8">
                                 <!--begin::Phone-->
-                                <input type="tel" id="phone" placeholder="Celular" formControlName="phone"
-                                    mask='(00) 0000-0000' class="form-control bg-transparent" />
+                                <input type="tel" id="phone" mask="(00) 00000-0000" placeholder="Celular" formControlName="phone"
+                                    class="form-control bg-transparent" />
 
                                 <div *ngIf="phone.invalid && formDir.submitted">
                                     <p class="text-danger">Celular é obrigatório</p>
@@ -202,14 +200,14 @@
                                         <a routerLink="/terms" class="ms-1 link-primary">Termos</a></span>
                                 </label>
                                 <div *ngIf="terms.invalid && formDir.submitted">
-                                    <p class="text-danger"  >Aceitar os termos é obrigatório</p>
+                                    <p class="text-danger">Aceitar os termos é obrigatório</p>
 
                                 </div>
                             </div>
                             <!--end::Accept-->
                             <!--begin::Submit button-->
                             <div class="d-grid mb-10">
-                                <button type="submit" value="Registrar" id="kt_sign_up_submit" [disabled]="!cadastroForm.valid"
+                                <button type="submit" value="Registrar" [disabled]="!cadastroForm.valid"
                                     class="btn btn-primary">
                                     <!--begin::Indicator label-->
                                     <span class="indicator-label">Registrar</span>
