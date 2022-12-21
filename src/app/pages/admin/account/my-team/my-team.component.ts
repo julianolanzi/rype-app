@@ -18,7 +18,7 @@ export class MyTeamComponent {
 
   ngOnInit(): void {
     this.UserInfoService.EmitUserInfo.subscribe((response) => {
-      if(response.team[0].teamName.length > 0){
+      if(response.team[0]){
         this.isteam = true;
         
         this.team = response;
