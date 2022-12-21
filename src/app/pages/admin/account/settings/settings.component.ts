@@ -84,6 +84,11 @@ export class SettingsComponent {
   ngOnInit(): void {
     this.UserInfoService.EmitUserInfo.subscribe((response) => {
       this.userProfile = response;
+     
+
+      let date = this.userProfile?.birthday;
+
+      console.log(date);
 
       this.updateForm.patchValue({
         nickname: this.userProfile?.nickname,
@@ -91,8 +96,10 @@ export class SettingsComponent {
         lastname: this.userProfile?.lastname,
         gender: this.userProfile?.gender,
         birthday: this.datePipe.transform(
-          this.userProfile?.birthday,
-          'yyyy-MM-dd'
+          date,
+          'yyyy-MM-dd',
+          'UTC',
+          'pt-BR'
         ),
         phone: this.userProfile?.phone,
         email: this.userProfile?.email,
@@ -109,6 +116,8 @@ export class SettingsComponent {
     this.user = Object.assign({}, this.user, this.updateForm.value);
     this.id = this.UserLocalInfo();
     this.isLoading = true;
+
+    console.log(this.user);
     this.userService.updateUser(this.user, this.id).subscribe(
       (sucesso) => {
         this.processarSucesso(sucesso);

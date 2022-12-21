@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { UserInfo } from 'src/app/models/account/user-info';
 import { EventService } from 'src/app/services/event.service';
-
+import { registerLocaleData } from '@angular/common';
+import localePT from '@angular/common/locales/pt';
+registerLocaleData(localePT);
 @Component({
   selector: 'app-overview',
   templateUrl: './overview.component.html',
