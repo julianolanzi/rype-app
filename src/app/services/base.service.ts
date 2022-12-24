@@ -28,6 +28,13 @@ export abstract class BaseService {
       }),
     };
   }
+  protected ObterAuthHeaderuploadJson() {
+    return {
+      headers: new HttpHeaders({
+        Authorization: `Bearer ${this.LocalStorage.obterTokenUsuario()}`,
+      }),
+    };
+  }
 
   protected extractData(response: any) {
     return response || {};

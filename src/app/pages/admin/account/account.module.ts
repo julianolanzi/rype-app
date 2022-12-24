@@ -18,6 +18,8 @@ import {
   IConfig,
 } from 'ngx-mask';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { UploadImgService } from 'src/app/services/upload.img.service';
 export const options: Partial<null | IConfig> | (() => Partial<IConfig>) = null;
 
 @NgModule({
@@ -38,7 +40,13 @@ export const options: Partial<null | IConfig> | (() => Partial<IConfig>) = null;
     NgxMaskPipe,
     FormsModule,
     ReactiveFormsModule,
+    SharedModule,
   ],
-  providers: [LocalStorageUtils, UserInfoService, provideNgxMask()],
+  providers: [
+    LocalStorageUtils,
+    UserInfoService,
+    UploadImgService,
+    provideNgxMask(),
+  ],
 })
 export class AccountModule {}
