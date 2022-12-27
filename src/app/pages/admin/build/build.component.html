@@ -1,43 +1,35 @@
-<div class="d-flex flex-column flex-column-fluid">
-    <div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6"></div>
-        <style>body { background-image: url('assets/img/svg/bg1.svg'); }</style>
-        <!--end::Page bg image-->
-        <!--begin::Authentication - Signup Welcome Message -->
-        <div class="d-flex flex-column flex-center flex-column-fluid">
-            <!--begin::Content-->
-            <div class="d-flex flex-column flex-center text-center p-10">
-                <!--begin::Wrapper-->
-                <div class="card card-flush w-md-650px py-5">
-                    <div class="card-body py-15 py-lg-20">
-                        <!--begin::Logo-->
-                        <div class="mb-7">
-                            <a routerLink="/admin" class="">
-                                <img alt="Logo" src="assets/img/svg/logo-verde.svg" class="h-100px" />
-                            </a>
-                        </div>
-                        <!--end::Logo-->
-                        <!--begin::Title-->
-                        <h1 class="fw-bolder text-gray-900 mb-5">OPS !! Em construção 🔥 </h1>
-                        <!--end::Title-->
-                        <p class="name me-1">{{this.nickName}}</p>
-                        
-                        <!--begin::Text-->
-                        <div class="fw-semibold fs-6 text-gray-500 mb-3">Essa pagina ainda está em construção.</div>
-                        <div class="fw-semibold fs-6 text-gray-500 mb-3">Mas assim que ela ficar pronta avisamos você por e-mail 🤘🏼.</div>
-                        <!--end::Text-->
-                        <p class="name me-1">{{this.email}}</p>
-                        <!--begin::Link-->
+<div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6">
 
-                        <div class="fw-semibold fs-6 text-gray-500 mb-7">Até Breve</div>
-                   
-                        <!--end::Link-->
-                    </div>
+</div>
+<div id="kt_app_content" class="app-content flex-column-fluid">
+    <div id="kt_app_content_container" class="app-container container-xxl justify-content-center">
+        <div class="card card-flush   py-5">
+            <div class="card-body py-15 py-lg-20 justify-content-center">
+                <!--begin::Logo-->
+                <div class="mb-7">
+                    <a routerLink="/admin" class="">
+                        <img alt="Logo" src="assets/img/svg/logo-verde.svg" class="h-100px" />
+                    </a>
                 </div>
-                <!--end::Wrapper-->
+                <!--end::Logo-->
+                <!--begin::Title-->
+                <h1 class="fw-bolder text-gray-900 mb-5">OPS !! Em construção 🔥 </h1>
+                <!--end::Title-->
+                <p class="name me-1">{{this.nickName}}</p>
+
+                <!--begin::Text-->
+                <div class="fw-semibold fs-6 text-gray-500 mb-3">Essa pagina ainda está em construção.</div>
+                <div class="fw-semibold fs-6 text-gray-500 mb-3">Mas assim que ela ficar pronta avisamos você por e-mail
+                    🤘🏼.</div>
+                <!--end::Text-->
+                <p class="name me-1">{{this.email}}</p>
+                <!--begin::Link-->
+
+                <div class="fw-semibold fs-6 text-gray-500 mb-7">Até Breve</div>
+
+                <!--end::Link-->
             </div>
-            <!--end::Content-->
         </div>
-        <!--end::Authentication - Signup Welcome Message-->
-    
+    </div>
 
 </div>

@@ -18,22 +18,8 @@ export class NavbarComponent {
 
   constructor(private router: Router) {}
   ngOnInit(): void {
-    let toogle = document.getElementById('toggleMobile') as HTMLElement;
-    let sidebar = document.querySelector('.app-sidebar') as HTMLElement;
-    let menumobile = document.getElementById('mobileCLOSE') as HTMLElement;
-    toogle.addEventListener('click', () => {
-      sidebar.classList.toggle('drawer');
-      sidebar.classList.toggle('drawer-start');
-      sidebar.classList.toggle('drawer-on');
-      menumobile.classList.toggle('hidemenu');
-    });
+  
 
-    menumobile.addEventListener('click', () => {
-      sidebar.classList.toggle('drawer');
-      sidebar.classList.toggle('drawer-start');
-      sidebar.classList.toggle('drawer-on');
-      menumobile.classList.add('hide');
-    });
 
     this.dataUser();
   }
