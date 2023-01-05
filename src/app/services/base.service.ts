@@ -1,8 +1,6 @@
-import { environment } from './../../environments/environment';
 import { LocalStorageUtils } from './../utils/localstorage';
 import { HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { throwError } from 'rxjs';
-import { EventService } from './event.service';
 
 export abstract class BaseService {
 

@@ -1,0 +1,231 @@
+<div class="card mb-12">
+    <!--begin::Hero body-->
+    <div class="card-body flex-column p-5">
+        <div>
+            <div class="pb-10 pb-lg-15">
+                <!--begin::Title-->
+                <h2 class="fw-bold d-flex align-items-center text-dark">Voce ainda não faz parte de um time
+                </h2>
+                <!--end::Title-->
+                <!--begin::Notice-->
+                <div class="text-muted fw-semibold fs-6">Abaixo escolha a opção que desejar
+                    <!--end::Notice-->
+                </div>
+            </div>
+
+            <div class="row">
+                <!--begin::Col-->
+                <div class="col-lg-6">
+                    <!--begin::Option-->
+                    <button
+                        class="btn btn-outline btn-outline-dashed col-lg-12 btn-active-light-primary p-7 d-flex align-items-center mb-10"
+                        (click)="optionUser('register')">
+                        <span class="svg-icon svg-icon-3x me-5">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M20 14H18V10H20C20.6 10 21 10.4 21 11V13C21 13.6 20.6 14 20 14ZM21 19V17C21 16.4 20.6 16 20 16H18V20H20C20.6 20 21 19.6 21 19ZM21 7V5C21 4.4 20.6 4 20 4H18V8H20C20.6 8 21 7.6 21 7Z"
+                                    fill="currentColor"></path>
+                                <path opacity="0.3"
+                                    d="M17 22H3C2.4 22 2 21.6 2 21V3C2 2.4 2.4 2 3 2H17C17.6 2 18 2.4 18 3V21C18 21.6 17.6 22 17 22ZM10 7C8.9 7 8 7.9 8 9C8 10.1 8.9 11 10 11C11.1 11 12 10.1 12 9C12 7.9 11.1 7 10 7ZM13.3 16C14 16 14.5 15.3 14.3 14.7C13.7 13.2 12 12 10.1 12C8.10001 12 6.49999 13.1 5.89999 14.7C5.59999 15.3 6.19999 16 7.39999 16H13.3Z"
+                                    fill="currentColor"></path>
+                            </svg>
+                        </span>
+                        Criar meu time
+                    </button>
+
+                    <!--end::Option-->
+                </div>
+                <!--end::Col-->
+                <!--begin::Col-->
+                <div class="col-lg-6">
+                    <!--begin::Option-->
+                    <button
+                        class="btn btn-outline col-lg-12 btn-outline-dashed btn-active-light-primary p-7 d-flex align-items-center mb-10"
+                        (click)="optionUser('search')">
+                        <span class="svg-icon svg-icon-3x me-5">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M20 14H18V10H20C20.6 10 21 10.4 21 11V13C21 13.6 20.6 14 20 14ZM21 19V17C21 16.4 20.6 16 20 16H18V20H20C20.6 20 21 19.6 21 19ZM21 7V5C21 4.4 20.6 4 20 4H18V8H20C20.6 8 21 7.6 21 7Z"
+                                    fill="currentColor"></path>
+                                <path opacity="0.3"
+                                    d="M17 22H3C2.4 22 2 21.6 2 21V3C2 2.4 2.4 2 3 2H17C17.6 2 18 2.4 18 3V21C18 21.6 17.6 22 17 22ZM10 7C8.9 7 8 7.9 8 9C8 10.1 8.9 11 10 11C11.1 11 12 10.1 12 9C12 7.9 11.1 7 10 7ZM13.3 16C14 16 14.5 15.3 14.3 14.7C13.7 13.2 12 12 10.1 12C8.10001 12 6.49999 13.1 5.89999 14.7C5.59999 15.3 6.19999 16 7.39999 16H13.3Z"
+                                    fill="currentColor"></path>
+                            </svg>
+                        </span>
+                        Buscar por um time
+                    </button>
+
+                    <!--end::Option-->
+                </div>
+                <!--end::Col-->
+
+            </div>
+        </div>
+
+    </div>
+    <!--end::Hero body-->
+</div>
+
+<div *ngIf="isSearchTeam == true">
+    <app-search-team></app-search-team>
+</div>
+
+<div *ngIf="isRegister == true" class="card mb-5 mb-xl-10">
+
+    <div class="card-body border-top p-9">
+        <form class="form w-100" novalidate="novalidate" (ngSubmit)="addTeam()" [formGroup]="cadastroTeamForm"
+            #formDir="ngForm">
+            <!--begin::Heading-->
+            <div class="alert alert-danger" *ngIf="errors.length > 0">
+                <h3 id="msgRetorno">Opa! Alguma coisa não deu certo:</h3>
+                <ul>
+                    <li *ngFor="let error of errors">{{ error }}</li>
+                </ul>
+            </div>
+            <p *ngIf="isRegisterSucess == true" class="alert alert-success">Cadastro realizado com
+                sucesso 🤘🏼</p>
+            <div class="text-center mb-11">
+                <!--begin::Title-->
+                <h1 class="text-dark fw-bolder mb-3">Registrar</h1>
+                <!--end::Title-->
+                <!--begin::Subtitle-->
+                <div class="text-gray-500 fw-semibold fs-6">Registre seu time</div>
+                <!--end::Subtitle=-->
+            </div>
+            <!--begin::Heading-->
+
+            <!--begin::Separator-->
+            <div class="separator separator-content my-14">
+                <span class="w-125px text-gray-500 fw-semibold fs-7 ">Informações obrigatórias</span>
+            </div>
+            <!--end::Separator-->
+            <!--begin::Input group=-->
+            <div class="fv-row mb-8">
+                <!--begin::name-->
+                <input type="text" id="name" formControlName="name" placeholder="Nome"
+                    class="form-control bg-transparent" />
+                <div *ngIf="name.invalid && formDir.submitted">
+                    <p class="text-danger">name é obrigatório</p>
+                </div>
+                <!--end::name-->
+            </div>
+            <div class="fv-row mb-8">
+                <!--begin::tagName-->
+                <input type="text" id="tagName" formControlName="tagName" placeholder="TagName"
+                    class="form-control bg-transparent" />
+                <div *ngIf="tagName.invalid && formDir.submitted">
+                    <p class="text-danger">tagName é obrigatório</p>
+                </div>
+                <!--end::tagName-->
+            </div>
+            <div class="fv-row mb-8">
+                <!--begin::Instagram-->
+                <textarea class="form-control bg-transparent" placeholder="Descrição do time" name="description"
+                    id="description" formControlName="description" cols="30" rows="10"></textarea>
+                <!--end::Instagram-->
+            </div>
+            <div class="fv-row mb-8">
+                <!--begin::Instagram-->
+                <input type="text" id="instagramTeam" placeholder="Instagram do time" formControlName="instagramTeam"
+                    class="form-control bg-transparent" />
+                <!--end::Instagram-->
+            </div>
+
+            <div class="fv-row mb-8">
+                <!--begin::Instagram-->
+                <input type="text" id="discordTeam" placeholder="discord do time" formControlName="discordTeam"
+                    class="form-control bg-transparent" />
+                <!--end::Instagram-->
+            </div>
+            <div class="fv-row mb-8">
+                <!--begin::Instagram-->
+                <input type="text" id="emailTeam" placeholder="email do time" formControlName="emailTeam"
+                    class="form-control bg-transparent" />
+                <!--end::Instagram-->
+            </div>
+            <div class="fv-row mb-8">
+                <!--begin::Instagram-->
+                <input type="text" id="facebookTeam" placeholder="facebook do time" formControlName="facebookTeam"
+                    class="form-control bg-transparent" />
+                <!--end::Instagram-->
+            </div>
+            <div class="fv-row mb-8">
+                <!--begin::Instagram-->
+                <input type="text" id="youtubeTeam" placeholder="youtube do time" formControlName="youtubeTeam"
+                    class="form-control bg-transparent" />
+                <!--end::Instagram-->
+            </div>
+
+
+
+            <!--begin::Input group-->
+            <div class="mb-10">
+                <!--begin::Label-->
+                <label class="required fw-semibold fs-6 mb-5">Escolha o tipo de time ?</label>
+                <!--end::Label-->
+                <div *ngIf="private.invalid && formDir.submitted">
+                    <p class="text-danger">Informação obrigatória</p>
+                </div>
+                <!--begin::Input row-->
+                <div class="d-flex">
+                    <!--begin::Radio-->
+                    <div class="form-check form-check-custom form-check-solid mb-5">
+                        <!--begin::Input-->
+                        <input class="form-check-input me-3" id="private" type="radio" value="true"
+                            formControlName="private" />
+                        <!--end::Input-->
+
+                        <!--begin::Label-->
+                        <label class="form-check-label" for="kt_docs_formvalidation_radio_option_1">
+                            <div class="fw-semibold text-gray-800">Privado</div>
+                        </label>
+                        <!--end::Label-->
+                    </div>
+                    <!--end::Radio-->
+
+                    <!--begin::Radio-->
+                    <div class="form-check form-check-custom form-check-solid mb-5 ms-4">
+                        <!--begin::Input-->
+                        <input class="form-check-input me-3" id="private" type="radio" value="false"
+                            formControlName="private" />
+                        <!--end::Input-->
+
+                        <!--begin::Label-->
+                        <label class="form-check-label" for="kt_docs_formvalidation_radio_option_2">
+                            <div class="fw-semibold text-gray-800">Público</div>
+                        </label>
+                        <!--end::Label-->
+                    </div>
+                    <!--end::Radio-->
+
+
+                </div>
+                <!--end::Input row-->
+            </div>
+            <!--end::Input group-->
+
+
+
+
+            <!--begin::Accept-->
+
+            <!--end::Accept-->
+            <!--begin::Submit button-->
+            <div class="d-grid mb-10">
+                <button type="submit" value="Registrar" [disabled]="!cadastroTeamForm.valid" class="btn btn-primary">
+                    <!--begin::Indicator label-->
+                    <span class="indicator-label">Registrar</span>
+                    <!--end::Indicator label-->
+                </button>
+            </div>
+            <!--end::Submit button-->
+            <!--begin::Sign up-->
+            <div class="text-gray-500 text-center fw-semibold fs-6">Já possui uma conta ?
+                <a routerLink="/auth" class="link-primary fw-semibold">Login</a>
+            </div>
+            <!--end::Sign up-->
+        </form>
+    </div>
+</div>

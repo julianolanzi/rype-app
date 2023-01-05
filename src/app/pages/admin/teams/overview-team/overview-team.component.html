@@ -1,0 +1,172 @@
+<div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6">
+
+</div>
+
+<div id="kt_app_content" class="app-content flex-column-fluid">
+    <div id="kt_app_content_container" class="app-container container-xxl">
+
+        
+            <app-basic-info-team></app-basic-info-team>
+
+
+        <!--begin::Tab TEAM-->
+        <div *ngIf="this.Team?.dataTeam" class="tab-content">
+            <!--begin::Heading-->
+
+            <!--begin::Tab pane-->
+            <div *ngIf="this.Team.dataTeam?.admin" class="tab-pane fade show active">
+                <h3 class="fw-bold my-2">Adm Principal
+
+                </h3>
+                <!--end::Heading-->
+                <!--begin::Row-->
+                <div class="row g-6 g-xl-9">
+                    <!--begin::Col-->
+                    <div class="col-md-6 col-xxl-4">
+                        <!--begin::Card-->
+                        <div class="card">
+
+                            <!--begin::Card body-->
+                            <div class="card-body d-flex flex-center flex-column pt-12 p-9">
+                                <!--begin::Avatar-->
+                                <div class="symbol symbol-65px symbol-circle mb-5">
+                                    <img src="{{this.Team.dataTeam.admin.url}}" alt="image" />
+                                    <div
+                                        class="bg-success position-absolute border border-4 border-body h-15px w-15px rounded-circle translate-middle start-100 top-100 ms-n3 mt-n3">
+                                    </div>
+                                </div>
+                                <!--end::Avatar-->
+                                <!--begin::Name-->
+                                <a
+                                    class="fs-4 text-gray-800 text-hover-primary fw-bold mb-0">{{this.Team.dataTeam.admin.nickname}}</a>
+                                <!--end::Name-->
+                                <!--begin::Position-->
+                                <div class="fw-semibold text-gray-400 mb-6">
+                                    {{this.Team.dataTeam.admin.country.toLocaleUpperCase()}}</div>
+                                <!--end::Position-->
+
+                            </div>
+                            <!--end::Card body-->
+                        </div>
+                        <!--end::Card-->
+                    </div>
+                    <!--end::Col-->
+
+                </div>
+                <!--end::Row-->
+
+            </div>
+            <!--end::T/ab pane-->
+
+            <!--begin::Tab pane-->
+            <div *ngIf="this.Team.dataTeam?.adminMembers?.length != 0" class="tab-pane fade show active">
+                <h3 class="fw-bold my-2">Adm,s
+
+                </h3>
+                <!--end::Heading-->
+                <!--begin::Row-->
+                <div class="row g-6 g-xl-9">
+                    <!--begin::Col-->
+                    <div class="col-md-6 col-xxl-4" *ngFor="let member of this.Team.dataTeam?.adminMembers">
+                        <!--begin::Card-->
+                        <div class="card">
+
+                            <!--begin::Card body-->
+                            <div class="card-body d-flex flex-center flex-column pt-12 p-9">
+                                <!--begin::Avatar-->
+                                <div class="symbol symbol-65px symbol-circle mb-5">
+                                    <img src="{{member.url}}" alt="image" />
+                                    <div
+                                        class="bg-success position-absolute border border-4 border-body h-15px w-15px rounded-circle translate-middle start-100 top-100 ms-n3 mt-n3">
+                                    </div>
+                                </div>
+                                <!--end::Avatar-->
+                                <!--begin::Name-->
+                                <a class="fs-4 text-gray-800 text-hover-primary fw-bold mb-0">{{member.nickname}}</a>
+                                <!--end::Name-->
+                                <!--begin::Position-->
+                                <div class="fw-semibold text-gray-400 mb-6">{{member.country.toLocaleUpperCase()}}</div>
+                                <!--end::Position-->
+
+                            </div>
+                            <!--end::Card body-->
+                        </div>
+                        <!--end::Card-->
+                    </div>
+                    <!--end::Col-->
+
+
+
+
+
+
+                </div>
+                <!--end::Row-->
+
+            </div>
+            <!--end::Tab pane-->
+
+
+            <!--begin::Tab pane-->
+            <div *ngIf="this.Team.dataTeam?.members?.length != 0" class="tab-pane fade show active">
+                <h3 class="fw-bold my-2">Membros
+
+                </h3>
+                <!--end::Heading-->
+                <!--begin::Row-->
+                <div class="row g-6 g-xl-9">
+                    <!--begin::Col-->
+                    <div class="col-md-6 col-xxl-4" *ngFor="let member of this.Team.dataTeam?.members">
+                        <!--begin::Card-->
+                        <div class="card">
+
+                            <!--begin::Card body-->
+                            <div class="card-body d-flex flex-center flex-column pt-12 p-9">
+                                <!--begin::Avatar-->
+                                <div class="symbol symbol-65px symbol-circle mb-5">
+                                    <img src="{{member.url}}" alt="image" />
+                                    <div
+                                        class="bg-success position-absolute border border-4 border-body h-15px w-15px rounded-circle translate-middle start-100 top-100 ms-n3 mt-n3">
+                                    </div>
+                                </div>
+                                <!--end::Avatar-->
+                                <!--begin::Name-->
+                                <a class="fs-4 text-gray-800 text-hover-primary fw-bold mb-0">{{member.nickname}}</a>
+                                <!--end::Name-->
+                                <!--begin::Position-->
+                                <div class="fw-semibold text-gray-400 mb-6">{{member.country.toLocaleUpperCase()}}</div>
+                                <!--end::Position-->
+
+                            </div>
+                            <!--end::Card body-->
+                        </div>
+                        <!--end::Card-->
+                    </div>
+                    <!--end::Col-->
+
+
+
+
+
+
+                </div>
+                <!--end::Row-->
+
+            </div>
+            <!--end::Tab pane-->
+            <!--begin::Tab pane-->
+
+            <!--end::Tab pane-->
+        </div>
+        <!--end::Tab TEAM-->
+
+
+        <!--begin::Tab NOT TEAM-->
+        <div *ngIf="!this.Team?.dataTeam" >
+            <app-register-team></app-register-team>
+        </div>
+         <!--begin::Tab NOT TEAM-->
+
+    </div>
+
+</div>

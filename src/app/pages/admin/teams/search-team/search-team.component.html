@@ -1,0 +1,156 @@
+
+<div class="card mb-5 mb-xl-10">
+<div class="card-body border-top p-9">
+    <div class="text-center mb-11">
+        <!--begin::Title-->
+        <h1 class="text-dark fw-bolder mb-3">Busca um time pelo nome</h1>
+        <!--end::Title-->
+        <!--begin::Subtitle-->
+        <div class="text-gray-500 fw-semibold fs-6">Verifique a indicação do time</div>
+        <!--end::Subtitle=-->
+    </div>
+
+    <form (ngSubmit)="searchTeam()" [formGroup]="searchForm" #formDir="ngForm">
+        <!--begin::Card-->
+        <div class="card mb-7">
+            <!--begin::Card body-->
+            <div class="card-body">
+                <!--begin::Compact form-->
+                <div class="d-flex align-items-center">
+                    <!--begin::Input group-->
+                    <div class="position-relative w-md-400px me-md-2">
+                        <!--begin::Svg Icon | path: icons/duotune/general/gen021.svg-->
+                        <span
+                            class="svg-icon svg-icon-3 svg-icon-gray-500 position-absolute top-50 translate-middle ms-6">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1"
+                                    transform="rotate(45 17.0365 15.1223)" fill="currentColor"></rect>
+                                <path
+                                    d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z"
+                                    fill="currentColor"></path>
+                            </svg>
+                        </span>
+                        <!--end::Svg Icon-->
+                        <input type="text" class="form-control form-control-solid ps-10" id="key"  formControlName="key"
+                            placeholder="Buscar">
+                            <div *ngIf="key.invalid && formDir.submitted">
+                                <p class="text-danger">Nome é obrigatório</p>
+                            </div>
+                    </div>
+                    <!--end::Input group-->
+                    <!--begin:Action-->
+                    <div class="d-flex align-items-center">
+                        <button type="submit" [disabled]="!searchForm.valid" class="btn btn-primary me-5">Buscar</button>                      
+                    </div>
+                    <!--end:Action-->
+                </div>
+                <!--end::Compact form-->
+              
+            </div>
+            <!--end::Card body-->
+        </div>
+        <!--end::Card-->
+    </form>
+  
+</div>
+</div>
+
+
+<div *ngIf="this.Teams" class="tab-content">
+    <!--begin::Tab pane-->
+    <div id="kt_project_users_card_pane" class="tab-pane fade show active" role="tabpanel">
+        <!--begin::Row-->
+        <div class="row g-6 g-xl-9">
+            <!--begin::Col-->
+            <div class="col-md-6 col-xxl-4" *ngFor="let team of this.Teams" >
+                <!--begin::Card-->
+                <div class="card">
+                    <!--begin::Card body-->
+                    <div class="card-body d-flex flex-center flex-column pt-12 p-9">
+                        <!--begin::Avatar-->
+                        <div class="symbol symbol-65px  mb-5">
+                            <img src="{{team.url}}" alt="image">
+                            <div _ngcontent-lqf-c63="" *ngIf="team.private == true" class="position-absolute translate-middle bottom-0 start-100 mb-6 bg-danger rounded-circle border border-4 border-body h-20px w-20px"></div>
+                            <div _ngcontent-lqf-c63="" *ngIf="team.private == false" class="position-absolute translate-middle bottom-0 start-100 mb-6 bg-success rounded-circle border border-4 border-body h-20px w-20px"></div>
+                        </div>
+                        <!--end::Avatar-->
+                        <!--begin::Name-->
+                        <a  class="fs-4 text-gray-800 text-hover-primary fw-bold mb-0">{{team.name}}</a>
+                        <!--end::Name-->
+                        <!--begin::Position-->
+                        <div *ngIf="team.private == true" class="fw-semibold text-gray-400 mb-6">Time Privado 🔒</div>
+                        <div *ngIf="team.private == false" class="fw-semibold text-gray-400 mb-6">Time Público 😎</div>
+                        <!--end::Position-->
+                        <!--begin::Info-->
+                        <div *ngIf="team.private == true" class="flex-sm-column  flex-wrap">
+                            <!--begin::Stats-->
+                            <div v class="border border-gray-300 border-dashed flex-xxl-center rounded min-w-80px py-3 px-4 mx-2 mb-3">
+                                <div class="fw-semibold text-gray-400">Entre em contato com o admin</div>
+                                <div class="fw-semibold text-gray-400">{{team.admin.email}}</div>
+                            </div>
+                            <!--end::Stats-->
+                           
+                        </div>
+                        <div *ngIf="team.private == false" class="d-flex  flex-center flex-wrap">
+                            <!--begin::Stats-->
+                            <button class="btn btn-outline col-lg-12 btn-outline-dashed btn-active-light-primary p-3 d-flex align-items-center mb-10" (click)="requestTeam(team)"> Entrar </button>
+                            <!--end::Stats-->
+                           
+                        </div>
+                        <!--end::Info-->
+                    </div>
+                    <!--end::Card body-->
+                </div>
+                <!--end::Card-->
+            </div>
+            <!--end::Col-->
+     
+    
+       
+     
+       
+         
+         
+          
+        </div>
+        <!--end::Row-->
+      
+    </div>
+    <!--end::Tab pane-->
+ 
+</div>
+
+<div  *ngIf="errors.length > 0" class="alert alert-danger d-flex align-items-center p-5 mb-10 mt-5">
+    <!--begin::Svg Icon | path: icons/duotune/general/gen048.svg-->
+    <span class="svg-icon svg-icon-2hx svg-icon-danger me-4">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path opacity="0.3" d="M20.5543 4.37824L12.1798 2.02473C12.0626 1.99176 11.9376 1.99176 11.8203 2.02473L3.44572 4.37824C3.18118 4.45258 3 4.6807 3 4.93945V13.569C3 14.6914 3.48509 15.8404 4.4417 16.984C5.17231 17.8575 6.18314 18.7345 7.446 19.5909C9.56752 21.0295 11.6566 21.912 11.7445 21.9488C11.8258 21.9829 11.9129 22 12.0001 22C12.0872 22 12.1744 21.983 12.2557 21.9488C12.3435 21.912 14.4326 21.0295 16.5541 19.5909C17.8169 18.7345 18.8277 17.8575 19.5584 16.984C20.515 15.8404 21 14.6914 21 13.569V4.93945C21 4.6807 20.8189 4.45258 20.5543 4.37824Z" fill="currentColor"></path>
+            <path d="M10.5606 11.3042L9.57283 10.3018C9.28174 10.0065 8.80522 10.0065 8.51412 10.3018C8.22897 10.5912 8.22897 11.0559 8.51412 11.3452L10.4182 13.2773C10.8099 13.6747 11.451 13.6747 11.8427 13.2773L15.4859 9.58051C15.771 9.29117 15.771 8.82648 15.4859 8.53714C15.1948 8.24176 14.7183 8.24176 14.4272 8.53714L11.7002 11.3042C11.3869 11.6221 10.874 11.6221 10.5606 11.3042Z" fill="currentColor"></path>
+        </svg>
+    </span>
+    <!--end::Svg Icon-->
+    <div class="d-flex flex-column">
+        <h4 class="mb-1 text-danger">OPS ...</h4>
+        <span *ngFor="let error of errors">{{ error }}</span>
+    </div>
+</div>
+
+<div *ngIf="isJoinSucess == true" class="alert alert-success d-flex align-items-center p-5 mb-10 mt-5">
+    <!--begin::Svg Icon | path: icons/duotune/general/gen048.svg-->
+    <span class="svg-icon svg-icon-2hx svg-icon-success me-4">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path opacity="0.3" d="M20.5543 4.37824L12.1798 2.02473C12.0626 1.99176 11.9376 1.99176 11.8203 2.02473L3.44572 4.37824C3.18118 4.45258 3 4.6807 3 4.93945V13.569C3 14.6914 3.48509 15.8404 4.4417 16.984C5.17231 17.8575 6.18314 18.7345 7.446 19.5909C9.56752 21.0295 11.6566 21.912 11.7445 21.9488C11.8258 21.9829 11.9129 22 12.0001 22C12.0872 22 12.1744 21.983 12.2557 21.9488C12.3435 21.912 14.4326 21.0295 16.5541 19.5909C17.8169 18.7345 18.8277 17.8575 19.5584 16.984C20.515 15.8404 21 14.6914 21 13.569V4.93945C21 4.6807 20.8189 4.45258 20.5543 4.37824Z" fill="currentColor"></path>
+            <path d="M10.5606 11.3042L9.57283 10.3018C9.28174 10.0065 8.80522 10.0065 8.51412 10.3018C8.22897 10.5912 8.22897 11.0559 8.51412 11.3452L10.4182 13.2773C10.8099 13.6747 11.451 13.6747 11.8427 13.2773L15.4859 9.58051C15.771 9.29117 15.771 8.82648 15.4859 8.53714C15.1948 8.24176 14.7183 8.24176 14.4272 8.53714L11.7002 11.3042C11.3869 11.6221 10.874 11.6221 10.5606 11.3042Z" fill="currentColor"></path>
+        </svg>
+    </span>
+    <!--end::Svg Icon-->
+    <div class="d-flex flex-column">
+        <h4 class="mb-1 text-success">Voce entrou no time com sucesso.</h4>
+        <span>Confira as regras do seu novo time ;)</span>
+    </div>
+</div>
+
+
+
+

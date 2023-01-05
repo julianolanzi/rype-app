@@ -90,6 +90,8 @@ export class RegisterComponent {
       this.User.url = url;
     }
 
+    console.log(this.User);
+
     this.isLoading = true;
     this.registerService.registrarUsuario(this.User).subscribe(
       (sucesso) => {
@@ -119,7 +121,7 @@ export class RegisterComponent {
 
   imgMale() {
     let number = Math.floor(Math.random() * 5 + 1);
-    const path = window.origin;
+    const path = 'https://rype-app.vercel.app/';
     var img = '';
     switch (number) {
       case 1:
@@ -147,7 +149,7 @@ export class RegisterComponent {
 
   imgFamele() {
     let number = Math.floor(Math.random() * 5 + 1);
-    const path = window.origin;
+    const path = 'https://rype-app.vercel.app/';
     var img = '';
     switch (number) {
       case 1:
