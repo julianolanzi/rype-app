@@ -1,6 +1,8 @@
+import { environment } from './../../environments/environment';
 import { LocalStorageUtils } from './../utils/localstorage';
 import { HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { throwError } from 'rxjs';
+
 
 export abstract class BaseService {
 
@@ -8,7 +10,7 @@ export abstract class BaseService {
 
   public LocalStorage = new LocalStorageUtils();
 
-  protected UrlServiceV1: string = 'https://apirypecorp-production.up.railway.app';
+  protected UrlServiceV1: string = environment.UrlService;
 
   protected ObterHeaderJson() {
     return {

@@ -2,5 +2,5 @@
 
 export const environment = {
     production: true,
-    UrlService: 'https://app-rype-api.herokuapp.com',
+    UrlService: 'https://apirypecorp-production.up.railway.app',
   };

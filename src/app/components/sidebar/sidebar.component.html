@@ -2,25 +2,25 @@
 
     <nav class="sidebar-container">
         <a routerLink="/admin" class="title-container">
-            <i class='bi bi-aspect-ratio icon-menu' ></i>
+            <i class='bi bi-aspect-ratio icon-menu'></i>
             <span class="title-name">Rype Plataform</span>
         </a>
 
         <div class="list">
             <div class="items">
                 <a routerLink="/admin" class="link">
-                    <i class='bi bi-house-check icon-menu' ></i>
+                    <i class='bi bi-house-check icon-menu'></i>
                     <span class="nav-title">Home</span>
                 </a>
                 <div class="dropdown-collapse">
-                    <div >
+                    <div>
                         <a routerLink="/admin" class="nav__dropdown-item">Feed</a>
                     </div>
                 </div>
             </div>
             <div class="items">
                 <a href="#" class="link">
-                    <i class='bi bi-person icon-menu' ></i>
+                    <i class='bi bi-person icon-menu'></i>
                     <span class="nav-title">Perfil</span>
                 </a>
                 <div class="dropdown-collapse">
@@ -31,15 +31,15 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="items">
                 <a href="#" class="link">
-                    <i class='bi bi-calendar-date icon-menu' ></i>
+                    <i class='bi bi-calendar-date icon-menu'></i>
                     <span class="nav-title">X-treinos</span>
                 </a>
                 <div class="dropdown-collapse">
                     <div class="nav__dropdown-content">
-                        <a routerLink="/breve"class="nav__dropdown-item">Meus treinos</a>
+                        <a routerLink="/breve" class="nav__dropdown-item">Meus treinos</a>
                         <a routerLink="/breve" class="nav__dropdown-item">Criar</a>
                         <a routerLink="/breve" class="nav__dropdown-item">Deletar</a>
                     </div>
@@ -47,12 +47,12 @@
             </div>
             <div class="items">
                 <a href="#" class="link">
-                    <i class='bi bi-people icon-menu' ></i>
+                    <i class='bi bi-people icon-menu'></i>
                     <span class="nav-title">Clan</span>
                 </a>
                 <div class="dropdown-collapse">
                     <div class="nav__dropdown-content">
-                        <a routerLink="/overview-team"class="nav__dropdown-item">Meu Clan</a>
+                        <a routerLink="/overview-team" class="nav__dropdown-item">Meu Clan</a>
                         <a routerLink="/breve" class="nav__dropdown-item">Criar</a>
                         <a routerLink="/breve" class="nav__dropdown-item">Deletar</a>
                     </div>
@@ -60,12 +60,12 @@
             </div>
             <div class="items">
                 <a href="#" class="link">
-                    <i class='bi bi-award icon-menu' ></i>
+                    <i class='bi bi-award icon-menu'></i>
                     <span class="nav-title">Eventos</span>
                 </a>
                 <div class="dropdown-collapse">
                     <div class="nav__dropdown-content">
-                        <a routerLink="/breve"class="nav__dropdown-item">Ver inscritos</a>
+                        <a routerLink="/breve" class="nav__dropdown-item">Ver inscritos</a>
                         <a routerLink="/breve" class="nav__dropdown-item">Criar</a>
                         <a routerLink="/breve" class="nav__dropdown-item">Deletar</a>
                     </div>
@@ -73,12 +73,12 @@
             </div>
             <div class="items">
                 <a href="#" class="link">
-                    <i class='bi bi-chat-dots icon-menu' ></i>
+                    <i class='bi bi-chat-dots icon-menu'></i>
                     <span class="nav-title">Suporte</span>
                 </a>
                 <div class="dropdown-collapse">
                     <div class="nav__dropdown-content">
-                        <a routerLink="/breve"class="nav__dropdown-item">Meus tickets</a>
+                        <a routerLink="/breve" class="nav__dropdown-item">Meus tickets</a>
                         <a routerLink="/breve" class="nav__dropdown-item">Criar</a>
                     </div>
                 </div>
@@ -87,62 +87,123 @@
     </nav>
 
     <nav class="mobile-container">
-        
+
         <div class="list-mobile">
             <div class="items-mobile">
                 <div class="dropdown-collapse-mobile">
                     <div class="nav__dropdown-content-mobile">
-                        <a routerLink="/admin" id="itemclick" class="nav__dropdown-item">Feed</a>
+                        <a routerLink="/overview" id="itemclick" class="nav__dropdown-item sub-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-file-person" viewBox="0 0 16 16">
+                                <path
+                                    d="M12 1a1 1 0 0 1 1 1v10.755S12 11 8 11s-5 1.755-5 1.755V2a1 1 0 0 1 1-1h8zM4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4z" />
+                                <path d="M8 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                            </svg>Meu perfil</a>
+                        <a routerLink="/settings" id="itemclick" class="nav__dropdown-item sub-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-file-richtext" viewBox="0 0 16 16">
+                                <path
+                                    d="M7 4.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0zm-.861 1.542 1.33.886 1.854-1.855a.25.25 0 0 1 .289-.047l1.888.974V7.5a.5.5 0 0 1-.5.5H5a.5.5 0 0 1-.5-.5V7s1.54-1.274 1.639-1.208zM5 9a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1H5z" />
+                                <path
+                                    d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z" />
+                            </svg>
+                            Alterar dados</a>
+                        <a routerLink="/security" id="itemclick" class="nav__dropdown-item sub-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-file-lock-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M7 6a1 1 0 0 1 2 0v1H7V6zM6 8.3c0-.042.02-.107.105-.175A.637.637 0 0 1 6.5 8h3a.64.64 0 0 1 .395.125c.085.068.105.133.105.175v2.4c0 .042-.02.107-.105.175A.637.637 0 0 1 9.5 11h-3a.637.637 0 0 1-.395-.125C6.02 10.807 6 10.742 6 10.7V8.3z" />
+                                <path
+                                    d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm-2 6v1.076c.54.166 1 .597 1 1.224v2.4c0 .816-.781 1.3-1.5 1.3h-3c-.719 0-1.5-.484-1.5-1.3V8.3c0-.627.46-1.058 1-1.224V6a2 2 0 1 1 4 0z" />
+                            </svg>Alterar senha</a>
                     </div>
                 </div>
                 <a  class="link-mobile">
-                    <i class='bi bi-house-check icon-menu-mobile'></i>
-                    <span class="nav-title-mobile">Home</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                        <path fill-rule="evenodd"
+                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                    </svg>
+                    <span class="nav-title-mobile">Perfil</span>
                 </a>
-                
+
             </div>
             <div class="items-mobile">
                 <div class="dropdown-collapse-mobile">
                     <div class="nav__dropdown-content-mobile">
-                        <a routerLink="/breve" class="nav__dropdown-item">Meus treinos</a>
-                        <a routerLink="/breve" class="nav__dropdown-item">Criar</a>
-                        <a routerLink="/breve" class="nav__dropdown-item">Deletar</a>
+                        <a routerLink="/breve" class="nav__dropdown-item sub-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-calendar3" viewBox="0 0 16 16">
+                                <path
+                                    d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z" />
+                                <path
+                                    d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                            </svg>Meus treinos</a>
+                        <a routerLink="/breve" class="nav__dropdown-item sub-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-plus-fill" viewBox="0 0 16 16">
+                                <path d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4V.5zM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2zM8.5 8.5V10H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V11H6a.5.5 0 0 1 0-1h1.5V8.5a.5.5 0 0 1 1 0z"/>
+                              </svg>Criar</a>
+                        <a routerLink="/breve" class="nav__dropdown-item sub-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear-wide-connected" viewBox="0 0 16 16">
+                                <path d="M7.068.727c.243-.97 1.62-.97 1.864 0l.071.286a.96.96 0 0 0 1.622.434l.205-.211c.695-.719 1.888-.03 1.613.931l-.08.284a.96.96 0 0 0 1.187 1.187l.283-.081c.96-.275 1.65.918.931 1.613l-.211.205a.96.96 0 0 0 .434 1.622l.286.071c.97.243.97 1.62 0 1.864l-.286.071a.96.96 0 0 0-.434 1.622l.211.205c.719.695.03 1.888-.931 1.613l-.284-.08a.96.96 0 0 0-1.187 1.187l.081.283c.275.96-.918 1.65-1.613.931l-.205-.211a.96.96 0 0 0-1.622.434l-.071.286c-.243.97-1.62.97-1.864 0l-.071-.286a.96.96 0 0 0-1.622-.434l-.205.211c-.695.719-1.888.03-1.613-.931l.08-.284a.96.96 0 0 0-1.186-1.187l-.284.081c-.96.275-1.65-.918-.931-1.613l.211-.205a.96.96 0 0 0-.434-1.622l-.286-.071c-.97-.243-.97-1.62 0-1.864l.286-.071a.96.96 0 0 0 .434-1.622l-.211-.205c-.719-.695-.03-1.888.931-1.613l.284.08a.96.96 0 0 0 1.187-1.186l-.081-.284c-.275-.96.918-1.65 1.613-.931l.205.211a.96.96 0 0 0 1.622-.434l.071-.286zM12.973 8.5H8.25l-2.834 3.779A4.998 4.998 0 0 0 12.973 8.5zm0-1a4.998 4.998 0 0 0-7.557-3.779l2.834 3.78h4.723zM5.048 3.967c-.03.021-.058.043-.087.065l.087-.065zm-.431.355A4.984 4.984 0 0 0 3.002 8c0 1.455.622 2.765 1.615 3.678L7.375 8 4.617 4.322zm.344 7.646.087.065-.087-.065z"/>
+                              </svg>Gerenciar</a>
                     </div>
                 </div>
-                <a routerLink="/admin" class="link-mobile">
-                    <i class='bi bi-calendar-date icon-menu-mobile'></i>
-                    <span class="nav-title-mobile">X-Treinos</span>
+                <a  class="link-mobile">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-calendar-date-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4V.5zm5.402 9.746c.625 0 1.184-.484 1.184-1.18 0-.832-.527-1.23-1.16-1.23-.586 0-1.168.387-1.168 1.21 0 .817.543 1.2 1.144 1.2z" />
+                        <path
+                            d="M16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2zm-6.664-1.21c-1.11 0-1.656-.767-1.703-1.407h.683c.043.37.387.82 1.051.82.844 0 1.301-.848 1.305-2.164h-.027c-.153.414-.637.79-1.383.79-.852 0-1.676-.61-1.676-1.77 0-1.137.871-1.809 1.797-1.809 1.172 0 1.953.734 1.953 2.668 0 1.805-.742 2.871-2 2.871zm-2.89-5.435v5.332H5.77V8.079h-.012c-.29.156-.883.52-1.258.777V8.16a12.6 12.6 0 0 1 1.313-.805h.632z" />
+                    </svg>
+                    <span class="nav-title-mobile">Treinos</span>
                 </a>
-                
+
             </div>
+            <div class="items-mobile">
+
+                <a routerLink="/admin" class="link-mobile">
+                    <img alt="Logo" src="/assets/img/svg/logo-verde.svg" class="h-40px h-lg-40px" />
+                    <!-- <span class="nav-title-mobile">Rype</span> -->
+                </a>
+
+            </div>
+
             <div class="items-mobile">
                 <div class="dropdown-collapse-mobile">
                     <div class="nav__dropdown-content-mobile">
-                        <a routerLink="/breve" class="nav__dropdown-item">Meus Eventos</a>
-                        <a routerLink="/breve" class="nav__dropdown-item">Criar</a>
-                        <a routerLink="/breve" class="nav__dropdown-item">Ver inscritos</a>
+                        <a routerLink="/overview-team" class="nav__dropdown-item sub-item"> 
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-vcard" viewBox="0 0 16 16">
+                                <path d="M5 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm4-2.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5ZM9 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4A.5.5 0 0 1 9 8Zm1 2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5Z"/>
+                                <path d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2ZM1 4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H8.96c.026-.163.04-.33.04-.5C9 10.567 7.21 9 5 9c-2.086 0-3.8 1.398-3.984 3.181A1.006 1.006 0 0 1 1 12V4Z"/>
+                              </svg>Meu Clan</a>
+                        <a routerLink="/settings-team" class="nav__dropdown-item sub-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-data-fill" viewBox="0 0 16 16">
+                                <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+                                <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1ZM10 8a1 1 0 1 1 2 0v5a1 1 0 1 1-2 0V8Zm-6 4a1 1 0 1 1 2 0v1a1 1 0 1 1-2 0v-1Zm4-3a1 1 0 0 1 1 1v3a1 1 0 1 1-2 0v-3a1 1 0 0 1 1-1Z"/>
+                              </svg>Alterar dados</a>
+                        <a routerLink="/admin-members" class="nav__dropdown-item sub-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill-gear" viewBox="0 0 16 16">
+                                <path d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm-9 8c0 1 1 1 1 1h5.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.544-3.393C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4Zm9.886-3.54c.18-.613 1.048-.613 1.229 0l.043.148a.64.64 0 0 0 .921.382l.136-.074c.561-.306 1.175.308.87.869l-.075.136a.64.64 0 0 0 .382.92l.149.045c.612.18.612 1.048 0 1.229l-.15.043a.64.64 0 0 0-.38.921l.074.136c.305.561-.309 1.175-.87.87l-.136-.075a.64.64 0 0 0-.92.382l-.045.149c-.18.612-1.048.612-1.229 0l-.043-.15a.64.64 0 0 0-.921-.38l-.136.074c-.561.305-1.175-.309-.87-.87l.075-.136a.64.64 0 0 0-.382-.92l-.148-.045c-.613-.18-.613-1.048 0-1.229l.148-.043a.64.64 0 0 0 .382-.921l-.074-.136c-.306-.561.308-1.175.869-.87l.136.075a.64.64 0 0 0 .92-.382l.045-.148ZM14 12.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z"/>
+                              </svg>Add Admin</a>
+                        <a routerLink="/members" class="nav__dropdown-item sub-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-plus-fill" viewBox="0 0 16 16">
+                                <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                                <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
+                              </svg>Add membro</a>
                     </div>
                 </div>
-                <a routerLink="/admin" class="link-mobile">
-                    <i class='bi bi-award icon-menu-mobile'></i>
-                    <span class="nav-title-mobile">Eventos</span>
-                </a>
-                
-            </div>
-          
-            <div class="items-mobile">
-                <div class="dropdown-collapse-mobile">
-                    <div class="nav__dropdown-content-mobile">
-                        <a routerLink="/overview-team"class="nav__dropdown-item">Meu Clan</a>
-                        <a routerLink="/breve" class="nav__dropdown-item">Criar</a>
-                        <a routerLink="/breve" class="nav__dropdown-item">Deletar</a>
-                    </div>
-                </div>
-                <a routerLink="/admin" class="link-mobile">
-                    <i class='bi bi-people icon-menu-mobile'></i>
+                <a  class="link-mobile">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-people-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" />
+                    </svg>
                     <span class="nav-title-mobile">Clan</span>
                 </a>
-                
+
             </div>
 
             <!-- <div class="items-mobile">
@@ -159,22 +220,42 @@
                 </a>
                 
             </div> -->
-            <div  class="items-mobile" id="activeProfile">
+            <div class="items-mobile" id="activeProfile">
                 <div class="dropdown-collapse-mobile">
                     <div class="nav__dropdown-content-mobile">
-                        <a routerLink="/overview" class="nav__dropdown-item" >Meu Perfil</a>
-                        <a routerLink="/settings" class="nav__dropdown-item" >Alterar Dados</a>
-                        <a routerLink="/security" class="nav__dropdown-item " id="LinkProfile">Alterar Senha</a>
+                        <div class="title-sub-menu">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-award" viewBox="0 0 16 16">
+                                <path d="M9.669.864 8 0 6.331.864l-1.858.282-.842 1.68-1.337 1.32L2.6 6l-.306 1.854 1.337 1.32.842 1.68 1.858.282L8 12l1.669-.864 1.858-.282.842-1.68 1.337-1.32L13.4 6l.306-1.854-1.337-1.32-.842-1.68L9.669.864zm1.196 1.193.684 1.365 1.086 1.072L12.387 6l.248 1.506-1.086 1.072-.684 1.365-1.51.229L8 10.874l-1.355-.702-1.51-.229-.684-1.365-1.086-1.072L3.614 6l-.25-1.506 1.087-1.072.684-1.365 1.51-.229L8 1.126l1.356.702 1.509.229z"/>
+                                <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1 4 11.794z"/>
+                              </svg>
+                              Eventos</div>
+                        <a routerLink="/breve" class="nav__dropdown-item sub-item">Meus Eventos</a>
+                        <a routerLink="/breve" class="nav__dropdown-item sub-item">Criar Evento</a>
+                        <a routerLink="/breve" class="nav__dropdown-item sub-item" >Gerenciar</a>
+
+                        <div class="title-sub-menu">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-dots" viewBox="0 0 16 16">
+                                <path d="M5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                                <path d="m2.165 15.803.02-.004c1.83-.363 2.948-.842 3.468-1.105A9.06 9.06 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.437 10.437 0 0 1-.524 2.318l-.003.011a10.722 10.722 0 0 1-.244.637c-.079.186.074.394.273.362a21.673 21.673 0 0 0 .693-.125zm.8-3.108a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6c0 3.193-3.004 6-7 6a8.06 8.06 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a10.97 10.97 0 0 0 .398-2z"/>
+                              </svg>
+                            Suporte</div>
+                            <a routerLink="/breve" class="nav__dropdown-item sub-item">Meus tickets</a>
+                            <a routerLink="/breve" class="nav__dropdown-item sub-item">Criar Ticket</a>
+                            <a routerLink="/breve" class="nav__dropdown-item sub-item" >Reportar Bug</a>
                     </div>
                 </div>
                 <a href="#" class="link-mobile" id="toggle-profile">
-                    <i class='bi bi-person icon-menu-mobile' ></i>
-                    <span class="nav-title-mobile">Perfil</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-gear-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z" />
+                    </svg>
+                    <span class="nav-title-mobile">configs</span>
                 </a>
-                
+
             </div>
-          
-           
+
+
         </div>
     </nav>
 
