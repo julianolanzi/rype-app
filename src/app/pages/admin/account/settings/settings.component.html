@@ -397,7 +397,7 @@
         <input type="file" (change)="onselectFile($event)" />
         <span>Selecione sua foto</span>
       </label>
-      <p class="btn btn-primary" (click)="changeImg()"> Alterar</p>
+      <p class="btn btn-primary" *ngIf="isChangeImg == true" (click)="changeImg()"> Alterar</p>
       <p class="btn btn-danger" (click)="modal.toggle()"> Cancelar</p>
     </div>
     <!--end::Users-->

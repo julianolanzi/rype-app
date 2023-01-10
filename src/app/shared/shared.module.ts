@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ModalUploadTeamImgComponent } from './modal-upload-team-img/modal-upload-team-img.component';
 import { ModalUploadProfileImgComponent } from './modal-upload-profile-img/modal-upload-profile-img.component';
+import { ModalSearchUsersComponent } from './modal-search-users/modal-search-users.component';
 
 
 
@@ -10,12 +10,13 @@ import { ModalUploadProfileImgComponent } from './modal-upload-profile-img/modal
     CommonModule,
   ],
   declarations: [
-    ModalUploadTeamImgComponent,
     ModalUploadProfileImgComponent,
+    ModalSearchUsersComponent,
   ],
   exports: [
-    ModalUploadTeamImgComponent,
     ModalUploadProfileImgComponent,
+    ModalSearchUsersComponent,
+
   ]
 })
 export class SharedModule { }

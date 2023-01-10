@@ -49538,6 +49538,7 @@ body {
   transition: left 0.3s ease, right 0.3s ease;
   display: flex;
   align-items: stretch;
+  
 }
 @media (min-width: 992px) {
   .app-footer {
@@ -49592,6 +49593,7 @@ body {
   }
   .app-footer {
     height: var(--kt-app-footer-height);
+    
   }
   [data-kt-app-footer-fixed-mobile="true"] .app-footer {
     z-index: 100;

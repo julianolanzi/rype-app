@@ -31,7 +31,8 @@ export const options: Partial<null | IConfig> | (() => Partial<IConfig>) = null;
     RegisterTeamComponent,
     SettingsTeamComponent,
     ManangerMemberTeamComponent,
-    ManangerAdminTeamComponent
+    ManangerAdminTeamComponent,
+    
   ],
   imports: [
     CommonModule,

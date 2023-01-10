@@ -27,6 +27,7 @@ export class SettingsComponent {
   localStorageUtils = new LocalStorageUtils();
   url: any;
   isChangeProfile: boolean = false;
+  isChangeImg: boolean = false;
 
   file!: File;
 
@@ -39,6 +40,8 @@ export class SettingsComponent {
   ) {
     this.isLoading = false;
     this.isChangeProfile = false;
+    this.isChangeImg = false;
+
 
     this.updateForm = new FormGroup({
       nickname: new FormControl('', [Validators.required]),
@@ -187,6 +190,7 @@ export class SettingsComponent {
       reader.readAsDataURL(e.target.files[0]);
       reader.onload = (event: any) => {
         this.url = event.target.result;
+        this.isChangeImg = true;
       };
     }
   }

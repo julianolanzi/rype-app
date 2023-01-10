@@ -90,7 +90,6 @@ export class RegisterComponent {
       this.User.url = url;
     }
 
-    console.log(this.User);
 
     this.isLoading = true;
     this.registerService.registrarUsuario(this.User).subscribe(

@@ -22,6 +22,7 @@ export interface TeamInfo {
     members: Array<any>;
     adminMembers: Array<any>;
     lines: Array<any>;
+    private: string;
 
     createdAt: Date;
   };

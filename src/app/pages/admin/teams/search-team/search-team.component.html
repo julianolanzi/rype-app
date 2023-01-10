@@ -34,9 +34,7 @@
                         <!--end::Svg Icon-->
                         <input type="text" class="form-control form-control-solid ps-10" id="key"  formControlName="key"
                             placeholder="Buscar">
-                            <div *ngIf="key.invalid && formDir.submitted">
-                                <p class="text-danger">Nome é obrigatório</p>
-                            </div>
+                          
                     </div>
                     <!--end::Input group-->
                     <!--begin:Action-->
@@ -44,6 +42,9 @@
                         <button type="submit" [disabled]="!searchForm.valid" class="btn btn-primary me-5">Buscar</button>                      
                     </div>
                     <!--end:Action-->
+                </div>
+                <div *ngIf="key.invalid && formDir.submitted">
+                    <p class="text-danger">Nome é obrigatório</p>
                 </div>
                 <!--end::Compact form-->
               

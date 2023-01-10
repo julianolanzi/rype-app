@@ -8,7 +8,7 @@ export abstract class BaseService {
 
   public LocalStorage = new LocalStorageUtils();
 
-  protected UrlServiceV1: string = 'https://app-rype-api.herokuapp.com';
+  protected UrlServiceV1: string = 'https://apirypecorp-production.up.railway.app';
 
   protected ObterHeaderJson() {
     return {
@@ -26,7 +26,7 @@ export abstract class BaseService {
       }),
     };
   }
-  protected ObterAuthHeaderuploadJson() {
+  protected ObterAuthHeaderUploadJson() {
     return {
       headers: new HttpHeaders({
         Authorization: `Bearer ${this.LocalStorage.obterTokenUsuario()}`,
