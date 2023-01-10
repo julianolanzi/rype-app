@@ -37,7 +37,6 @@ export class ManangerAdminTeamComponent {
   ngOnInit(): void {
     this.TeamEventService.EmitInfo.subscribe((response) => {
       this.Team = response;
-      console.log(this.Team);
     });
   }
 
