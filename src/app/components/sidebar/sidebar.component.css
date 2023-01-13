@@ -1,10 +1,11 @@
 .app-sidebar .sidebar-container {
-  background-color: var(--rypebackground);
+  background-color: var(--rypewhite);
   height: 100%;
   display: flex;
   flex-direction: column;
   padding-bottom: 3rem;
   scrollbar-width: none;
+  border-radius: 20px;
 }
 .app-sidebar .sidebar-container .title-container {
   display: flex;
@@ -12,17 +13,15 @@
   padding-top: 30px;
   padding-bottom: 30px;
 }
-.app-sidebar .sidebar-container .title-container i {
-  font-size: 30px;
-  color: #fff;
-  height: 50px;
-  min-width: 78px;
+.app-sidebar .sidebar-container .title-container img {
+  
+  margin-left: 10px;
   text-align: center;
   line-height: 50px;
 }
 .title-name {
   font-size: 22px;
-  color: #fff;
+  color: var(--rypecinza);
   font-weight: 600;
   transition: 0.3s ease;
   transition-delay: 0.1s;
@@ -44,38 +43,44 @@
   text-decoration: none;
 }
 .app-sidebar .sidebar-container .list .items i {
-  font-size: 30px;
-  color: #fff;
+  font-size: 22px;
+  color: var(--rypebackground);
   height: 50px;
-  min-width: 78px;
-  text-align: center;
+  min-width: 35px;
+  margin-left: 20px;
   line-height: 50px;
 }
 .nav-title {
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 400;
-  color: #fff;
+  color: var(--rypebackground);
   transition: all 0.4s ease;
   overflow: hidden;
 }
 
 .dropdown-collapse {
   display: none;
+  transition: 0.3s ease-in-out;
+  transition-delay: 0.3s;
 }
 
 .app-sidebar:hover .sidebar-container .list .items.active .dropdown-collapse {
   display: block;
-  padding: 6px 6px 14px 80px;
-  background-color: var(--rypecinza);
+  margin-left: 10px;
+  width: 220px;
+  padding: 6px 6px 14px 45px;
+  background-color: #ccc;
+  border-radius: 10px;
   opacity: 1;
+  transition: 0.3s ease-in-out;
+  transition-delay: 0.2s;
 }
 
 .app-sidebar .sidebar-container .list .items.active .dropdown-collapse a {
-  color: #fff;
-  font-size: 15px;
+  color: var(--rypebackground);
+  font-size: 13px;
   padding: 5px 0;
   white-space: nowrap;
-  transition: all 0.3s ease;
 }
 
 .app-sidebar:hover .nav-title {
@@ -87,6 +92,8 @@
 
 .app-sidebar .sidebar-container .list .items.active .dropdown-collapse {
   opacity: 0;
+  transition: 0.3s ease-in-out;
+  transition-delay: 0.2s;
 }
 /* .app-sidebar .mobile-container {
   display: none;
@@ -151,16 +158,32 @@
     margin-bottom: 7px;
   }
 
-  .app-sidebar .mobile-container .list-mobile .items-mobile:nth-child(2) .dropdown-collapse-mobile {
+  .app-sidebar
+    .mobile-container
+    .list-mobile
+    .items-mobile:nth-child(2)
+    .dropdown-collapse-mobile {
     margin-left: -67px;
   }
-  .app-sidebar .mobile-container .list-mobile .items-mobile:nth-child(4) .dropdown-collapse-mobile {
+  .app-sidebar
+    .mobile-container
+    .list-mobile
+    .items-mobile:nth-child(4)
+    .dropdown-collapse-mobile {
     margin-left: -234px;
   }
-  .app-sidebar .mobile-container .list-mobile .items-mobile:nth-child(5) .dropdown-collapse-mobile {
+  .app-sidebar
+    .mobile-container
+    .list-mobile
+    .items-mobile:nth-child(5)
+    .dropdown-collapse-mobile {
     margin-left: -293px;
   }
-  .app-sidebar .mobile-container .list-mobile .items-mobile.active .dropdown-collapse-mobile {
+  .app-sidebar
+    .mobile-container
+    .list-mobile
+    .items-mobile.active
+    .dropdown-collapse-mobile {
     width: 350px;
     min-height: 175px;
     height: auto;
@@ -171,26 +194,54 @@
     box-shadow: 0 5px 15px rgb(0 0 0 / 10%);
     left: 0;
   }
-  .app-sidebar .mobile-container .list-mobile .items-mobile.active .dropdown-collapse-mobile {
+  .app-sidebar
+    .mobile-container
+    .list-mobile
+    .items-mobile.active
+    .dropdown-collapse-mobile {
     display: block;
   }
-  .app-sidebar .mobile-container .list-mobile .items-mobile.active .dropdown-collapse-mobile .nav__dropdown-content-mobile{
+  .app-sidebar
+    .mobile-container
+    .list-mobile
+    .items-mobile.active
+    .dropdown-collapse-mobile
+    .nav__dropdown-content-mobile {
     display: flex;
     flex-direction: column;
     padding: 25px;
     align-items: flex-start;
   }
-  .app-sidebar .mobile-container .list-mobile .items-mobile.active .dropdown-collapse-mobile .nav__dropdown-content-mobile .sub-item{
+  .app-sidebar
+    .mobile-container
+    .list-mobile
+    .items-mobile.active
+    .dropdown-collapse-mobile
+    .nav__dropdown-content-mobile
+    .sub-item {
     display: flex;
     align-items: center;
   }
-  .app-sidebar .mobile-container .list-mobile .items-mobile.active .dropdown-collapse-mobile .nav__dropdown-content-mobile .sub-item svg{
+  .app-sidebar
+    .mobile-container
+    .list-mobile
+    .items-mobile.active
+    .dropdown-collapse-mobile
+    .nav__dropdown-content-mobile
+    .sub-item
+    svg {
     width: 20px;
     height: 20px;
     margin-right: 7px;
   }
- 
-  .app-sidebar .mobile-container .list-mobile .items-mobile.active .dropdown-collapse-mobile .nav__dropdown-content-mobile .nav__dropdown-item{
+
+  .app-sidebar
+    .mobile-container
+    .list-mobile
+    .items-mobile.active
+    .dropdown-collapse-mobile
+    .nav__dropdown-content-mobile
+    .nav__dropdown-item {
     color: var(--rypebackground);
     font-size: medium;
     font-weight: inherit;

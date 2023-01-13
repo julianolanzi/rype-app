@@ -46,6 +46,7 @@ export class SecurityComponent {
     return this.updatePass.get('confirmpassword')!;
   }
 
+
   changePass() {
     if (this.updatePass.invalid) {
       return;

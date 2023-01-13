@@ -2,9 +2,9 @@
 
 </div>
 <!--begin::Content container-->
-<div id="kt_app_content" class="app-content flex-column-fluid">
+<div  class="app-content flex-column-fluid">
   <!--begin::Content container-->
-  <div id="kt_app_content_container" class="app-container container-xxl">
+  <div  class="app-container container-xxl">
 
 
     <app-basic-info></app-basic-info>
@@ -155,3 +155,7 @@
 
 </div>
 <!--end::Content-->
+
+<div *ngIf="isLoading == true">
+  <app-loading></app-loading>
+</div>

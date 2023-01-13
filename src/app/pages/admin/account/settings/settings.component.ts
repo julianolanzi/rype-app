@@ -38,7 +38,7 @@ export class SettingsComponent {
     private datePipe: DatePipe,
     private uploadService: UploadImgService
   ) {
-    this.isLoading = false;
+    this.isLoading = true;
     this.isChangeProfile = false;
     this.isChangeImg = false;
 
@@ -94,7 +94,7 @@ export class SettingsComponent {
   ngOnInit(): void {
     this.UserInfoService.EmitUserInfo.subscribe((response) => {
       this.userProfile = response;
-
+      this.isLoading = false;
       this.url = this.userProfile?.url;
 
       this.updateForm.patchValue({

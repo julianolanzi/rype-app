@@ -7,10 +7,13 @@ import { recoveryPassword } from '../models/recovery-password';
 import { User } from './../models/user-register';
 import { BaseService } from './base.service';
 import { UserLogin } from '../models/user-login';
+import { LocalStorageUtils } from '../utils/localstorage';
 
 @Injectable()
 export class RegisterService extends BaseService {
-
+  localStorageUtils = new LocalStorageUtils();
+  user: any;
+  private userAuth: boolean = false;
   constructor(private http: HttpClient) {
     super();
   }
@@ -34,7 +37,6 @@ export class RegisterService extends BaseService {
   }
 
   resetPassword(user: resetPassword, token: string): Observable<any> {
-  
     let response = this.http
       .post(
         this.UrlServiceV1 + '/auth/reset_password/' + token,
@@ -47,12 +49,11 @@ export class RegisterService extends BaseService {
 
   loginUser(loginUser: UserLogin): Observable<UserLogin> {
     let response = this.http
-      .post(
-        this.UrlServiceV1 + '/auth/',
-        loginUser,
-        this.ObterHeaderJson()
-      )
+      .post(this.UrlServiceV1 + '/auth/', loginUser, this.ObterHeaderJson())
       .pipe(map(this.extractData), catchError(this.serviceError));
+
     return response;
   }
+
+ 
 }

@@ -11,12 +11,16 @@ registerLocaleData(localePT);
 })
 export class OverviewComponent {
   user!: UserInfo;
+  isLoading: boolean = false;
 
 
-  constructor(private UserInfoService: EventService) {}
+  constructor(private UserInfoService: EventService) {
+    this.isLoading = true;
+  }
 
   ngOnInit(): void {
     this.UserInfoService.EmitUserInfo.subscribe((response) => {
+      this.isLoading = false;
       this.user = response;
     });
   }

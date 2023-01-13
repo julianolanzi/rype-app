@@ -10,6 +10,7 @@ import { ComponetsModule } from './components/componets.module';
 
 import { AppComponent } from './app.component';
 import { CarregaJS } from './services/carrega.js.service';
+import { AuthGuard } from './guards/auth.guard';
 
 
 
@@ -23,7 +24,7 @@ import { CarregaJS } from './services/carrega.js.service';
     AdminLayoutModule,
     ComponetsModule,
   ],
-  providers: [CarregaJS, HTMLElement],
+  providers: [CarregaJS, HTMLElement, AuthGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -105,7 +105,7 @@
                                     <!--begin::Last login=-->
                                     <td data-order="2023-01-02T15:54:22-03:00">
                                         <div class="badge badge-light fw-bold">
-                                            {{member.phone | date : 'shortDate' : 'UTC' : 'pt-BR' }}
+                                            {{member.phone | mask: '(00) 00000-0000'}}
                                         </div>
                                     </td>
                                     <!--end::Last login=-->

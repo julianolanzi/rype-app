@@ -22,10 +22,7 @@ export class BasicInfoComponent {
     this.userData();
   }
 
-  ngOnInit(): void {
-
-   
-  }
+  ngOnInit(): void {}
   userData() {
     this.isLoading = false;
     this.id = this.UserLocalInfo();
@@ -40,7 +37,6 @@ export class BasicInfoComponent {
       }
     );
   }
-  
 
   UserLocalInfo() {
     let user = this.localStorageUtils.obertUser();
@@ -50,7 +46,6 @@ export class BasicInfoComponent {
   }
 
   processarSucesso(response: any) {
-    
     this.isLoading = false;
     this.errors = [];
   }

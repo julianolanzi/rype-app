@@ -19,7 +19,16 @@ export class NavbarComponent {
   constructor(private router: Router) {}
   ngOnInit(): void {
   
+    let toogle = document.getElementById('toggle') as HTMLElement;
+    let sidebar = document.querySelector('.app-sidebar') as HTMLElement;
+    let wrapper = document.querySelector('.app-wrapper') as HTMLElement;
+    let header = document.querySelector('.app-header') as HTMLElement;
 
+    toogle.addEventListener('click', () => {
+      sidebar.classList.toggle('close');
+      wrapper.classList.toggle('close-sidebar');
+      header.classList.toggle('close');
+    });
 
     this.dataUser();
   }
